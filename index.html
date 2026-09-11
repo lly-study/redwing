@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#C91F1B" />
+  <title>信阳农林学院红翼先锋队 · 红色文化志愿行</title>
+  <meta name="description" content="信阳农林学院红翼先锋队参与红色文化旅游活动的介绍与影像记录，追寻红色足迹，传承革命薪火。" />
+  <link rel="icon" type="image/png" sizes="32x32" href="images/brand/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="images/brand/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="images/brand/apple-touch-icon.png" />
+  <!-- 首屏第一张图预加载，避免进入页面时空一下 -->
+  <link rel="preload" as="image" href="images/hero/1.jpg" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- 图片缺失时自动显示提示占位块；头像图缺失则露出底下的文字头像（无需改动） -->
+  <script>
+    document.documentElement.classList.add('js');
+    window.addEventListener('error', function (e) {
+      var t = e.target;
+      if (!t || t.tagName !== 'IMG' || t.dataset.ph) return;
+      t.dataset.ph = '1';
+      if (t.classList.contains('avatar-img') || t.classList.contains('slide-img')) { t.style.display = 'none'; return; }
+      var d = document.createElement('div');
+      d.className = 'ph';
+      d.textContent = t.alt || '图片待添加';
+      t.replaceWith(d);
+    }, true);
+  </script>
+</head>
+
+<body>
+
+  <!-- ================= 顶部导航 ================= -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">
+       
+        <img class="brand-mark" src="images/brand/brand-logo.png" alt="红翼先锋队队徽" height="36" />
+        <span>
+          <span class="brand-name">信阳农林学院红翼先锋队</span>
+          <span class="brand-sub">民航普惠应急科普公益行动</span>
+        </span>
+      </a>
+
+      <button class="menu-btn" id="menu-btn" type="button" aria-label="打开菜单" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="main-nav" id="site-nav" aria-label="主导航">
+        <a href="index.html" class="active">首页</a>
+        <a href="about.html">项目概况</a>
+        <a href="team.html">团队风采</a>
+        <a href="activities.html">活动纪实</a>
+        <a href="resources.html">科普资源库</a>
+        <a href="join.html">加入我们</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ================= 首屏：照片轮播（6 屏 · 缓慢放大呼吸感） =================
+       图片：images/hero/1.jpg ~ 6.jpg（1600px 长边专用压缩图，由 _design\make-hero-images.ps1 生成）
+         · 目前 5.jpg / 6.jpg 是现有照片的「局部裁切版」临时候补；
+           把真正的第 5、6 张原图命名为 5.jpg、6.jpg 放进 images\_original，重跑脚本即可替换。
+       性能约定（★ 改动时务必遵守，否则会重新卡顿）：
+         · 除第 1 张外，其余图片用 data-src 由 js/main.js 按需懒加载，不要写死 src；
+         · "呼吸感"放大动画只加在 .slide-img（内层图片）上，且只给当前活动的那一张开 will-change；
+           千万不要把 transform / scale 动画加在 .slide 这一层；
+         · 图片缺失的屏会被自动跳过，不会出现空白屏。
+       换照片：改每个 .slide-img 的 data-src（第 1 张同时改 src），并同步改上面的 preload。 -->
+  <section class="hero" id="hero-slider">
+    <div class="slides">
+      <div class="slide is-active">
+        <img class="slide-img" src="images/hero/1.jpg" alt="红翼先锋队红色寻访活动照片" />
+      </div>
+      <div class="slide"><img class="slide-img" data-src="images/hero/2.jpg" alt="" /></div>
+      <div class="slide"><img class="slide-img" data-src="images/hero/3.jpg" alt="" /></div>
+      <div class="slide"><img class="slide-img" data-src="images/hero/4.jpg" alt="" /></div>
+      <div class="slide"><img class="slide-img" data-src="images/hero/5.jpg" alt="" /></div>
+      <div class="slide"><img class="slide-img" data-src="images/hero/6.jpg" alt="" /></div>
+    </div>
+    <div class="hero-scrim" aria-hidden="true"></div>
+
+    <div class="container">
+      <h1>红翼守护·将军故里</h1>
+      <p class="slogan">—— 信阳农林学院红翼先锋队  红色筑梦之旅活动纪实 ——</p>
+      <p class="lead">
+        立足河南新县田铺乡将军故里，把航空级应急技能转化为群众学得会的保命本领。
+        已完成红色寻访调研、入户访谈与三次试点宣讲。
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-solid" href="activities.html">浏览活动相册</a>
+        <a class="btn btn-outline" href="join.html">加入我们</a>
+      </div>
+    </div>
+
+    <button class="hero-btn prev" type="button" aria-label="上一张">‹</button>
+    <button class="hero-btn next" type="button" aria-label="下一张">›</button>
+    <div class="hero-dots" role="tablist" aria-label="轮播图切换"></div>
+  </section>
+
+  <!-- ================= 关于我们 ================= -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">ABOUT US</span>
+        <h2 class="section-title">关于我们</h2>
+        <div class="title-line"></div>
+        <p class="section-sub">一支热爱红色文化、热心公益服务的志愿者团队</p>
+      </div>
+
+      <div class="split">
+        <div>
+          <h3>我们是谁</h3>
+          <p>
+          &emsp;&emsp;我们是来自信阳农林学院航空服务艺术与管理专业的“红翼先锋队”，立足河南省信
+          阳市新县田铺乡将军故里红色沃土，秉持“红色精神为魂、航空技能为器”（红魂为根，蓝技为翼）
+          的核心理念，深挖鄂豫皖红色精神，联动民航专业力量，把航空标准化应急技能进行平民化转化，
+          开展民航普惠应急科普。我们跳出传统参观式红色教育，把红色传承从 “参观瞻仰” 转向
+          “躬身实践服务”，以青年力量走进乡村、社区、校园，把心肺复苏、海姆立克急救、创伤包扎等
+          实用应急知识送到群众身边，讲好红色故事，传授保命急救技能，用青春行动守护老区百姓生命安全，
+          实现红色基因传承与基层应急科普双向赋能。
+          </p>
+          <p>
+            &emsp;&emsp;我们希望做两件事：一是活化红色资源，让青年在基层服务实践中传
+          承红色精神；二是补齐基层应急科普 “最后一公里” 短板，让更多老区群众掌握自救、
+          互救本领。青年筑梦，知行合一，用专业守护群众平安。
+          </p>
+          <h3>我们的理念</h3>
+          <ul class="feature-list">
+            <li>传承红色，拒绝 “纸上学习” —— 我们不局限于展馆的瞻仰学习，推动红色
+            传承从 “看历史” 走向 “做实事”。每场科普都以许世友将军战场自救、刘名榜
+            救治伤员等真实红色故事开篇，让革命精神在服务群众的实践中落地生根。</li>
+            <li>航空技能，专业化平民化 —— 秉持 “去航空场景化、留专业标准化”，把 CPR 心肺
+            复苏、海姆立克急救法、规范包扎、紧急撤离与秩序管控等航空级技能，改编适配乡村老人、
+            少年儿童的通俗课程，拒绝晦涩理论，重实操、重体验（80% 全民通用 + 20% 航空特色）。</li>
+            <li>扎根基层，做可落地的普惠科普 —— 学生志愿者、高校指导教师、航司行业讲师协同发力，
+            深入社区、村镇、校园开展公益科普，配套问卷调研收集群众反馈，
+            形成 “宣讲实操—问卷调研—复盘优化—二次普及” 的完整闭环。</li>
+          </ul>
+        </div>
+        <div class="quote-card">
+          <div class="big-star">★</div>
+          <blockquote>“红色精神为魂，航空技能为器。”</blockquote>
+          <div class="who">—— 项目核心理念 · 红翼守护·将军故里</div>
+        </div>
+      </div>
+
+      <!-- 成果速览（数据来自 2026 年 5—6 月新县田铺乡调研与试点） -->
+      <div class="stats" style="margin-top:36px;">
+        <div class="stat">
+          <div class="num">3<small>次</small></div>
+          <div class="label">已完成试点宣讲</div>
+          <div class="src">2026 年 6 月 · 将军故里</div>
+        </div>
+        <div class="stat">
+          <div class="num">140<small>人</small></div>
+          <div class="label">问卷抽样居民</div>
+          <div class="src">另入户访谈 9 户</div>
+        </div>
+        <div class="stat">
+          <div class="num">85<small>%</small></div>
+          <div class="label">居民从未接受急救培训</div>
+          <div class="src">项目立项的核心依据</div>
+        </div>
+        <div class="stat blue">
+          <div class="num">20<small>+ 场/年</small></div>
+          <div class="label">年度公益科普计划</div>
+          <div class="src">目标培训 1000+ 人次</div>
+        </div>
+      </div>
+      <p style="text-align:center; margin-top:22px;">
+        <a class="btn btn-red" href="about.html">查看项目概况与调研数据 →</a>
+      </p>
+    </div>
+  </section>
+
+  
+
+  <!-- ================= 特色亮点 ================= -->
+  <section class="section" id="features">
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">WHAT WE DO</span>
+        <h2 class="section-title">我们的活动</h2>
+        <div class="title-line"></div>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <div class="icon">🧭</div>
+          <h3>红色寻访与将军事迹挖掘</h3>
+          <p>
+          走访鄂豫皖苏区首府革命博物馆、烈士陵园、许世友将军故里等红色地标，
+          学习大别山革命历史与 43 位新县籍开国将军的英雄事迹。</p>
+        </div>
+        <div class="card">
+          <div class="icon">📋</div>
+          <h3>入户访谈与需求调研</h3>
+          <p>深入田铺乡社区与周边村庄入户访谈，抽样 140 名居民开展问卷调研，
+            摸清群众应急知识缺口，据此定制课程重点。</p>
+        </div>
+        <div class="card">
+          <div class="icon">🩺</div>
+          <h3>试点宣讲与技能教学</h3>
+          <p>以"红色故事导入 + 航空标准技能教学"开展科普，
+            现场手把手教学心肺复苏、海姆立克、创伤包扎，已完成三次试点宣讲。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 两大内容模块入口 ================= -->
+  <section class="section alt" id="modules">
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">MORE</span>
+        <h2 class="section-title">更多内容</h2>
+        <div class="title-line"></div>
+        <p class="section-sub"></p>
+      </div>
+      <div class="entry-grid">
+        <a class="entry-card" href="about.html">
+          <span class="entry-icon">📌</span>
+          <h3>项目概况</h3>
+          <p>项目背景与痛点数据（85% 居民从未接受急救培训）、国家到地方三级政策支持、
+             六大核心创新与六步法标准流程、可交付成果与未来规划。</p>
+          <span class="entry-more">进入项目概况 →</span>
+        </a>
+        <a class="entry-card" href="team.html">
+          <span class="entry-icon">🎓</span>
+          <h3>团队风采</h3>
+          <p>校内指导教师 11 人与深圳 / 春秋 / 海南 / 山东 / 成都航空行业导师阵容，
+             志愿服务队组织架构，以及成员的服务感言与真实故事。</p>
+          <span class="entry-more">进入团队风采 →</span>
+        </a>
+        <a class="entry-card blue" href="resources.html">
+          <span class="entry-icon">🩺</span>
+          <h3>科普资源库</h3>
+          <p>三大保命技能：心肺复苏、海姆立克、包扎止血 —— 红色故事导入 + 分步图解 +
+             教学短视频 + 常见误区；另有航空特色专栏。</p>
+          <span class="entry-more">进入科普资源库 →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CTA 横幅 ================= -->
+  <section class="cta">
+    <div class="container">
+      <h2>愿与你同行，共赴红色之约</h2>
+      <p>无论你擅长摄影摄像、文案策划，还是热心现场服务，这里都有你的位置。</p>
+      <a class="btn btn-solid" href="join.html">了解如何加入</a>
+    </div>
+  </section>
+
+  <!-- ================= 页脚 ================= -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h4>信阳农林学院红翼先锋队</h4>
+        <p>红色文化志愿行 · 以志愿之名，行传承之实。</p>
+      </div>
+      <div>
+        <h4>快速导航</h4>
+        <p><a href="index.html">首页</a></p>
+        <p><a href="about.html">项目概况</a></p>
+        <p><a href="team.html">团队风采</a></p>
+        <p><a href="activities.html">活动纪实</a></p>
+        <p><a href="resources.html">科普资源库</a></p>
+        <p><a href="join.html">加入我们</a></p>
+      </div>
+      <div>
+        <h4>联系我们</h4>
+        <p>联系人：彭思雨</p>
+        <p><a href="mailto:602519769@qq.com?subject=%E5%92%A8%E8%AF%A2%E4%BF%A1%E9%98%B3%E5%86%9C%E6%9E%97%E5%AD%A6%E9%99%A2%E7%BA%A2%E7%BF%BC%E5%85%88%E9%94%8B%E9%98%9F">邮箱：602519769@qq.com</a></p>
+        <!--<p>微信公众号：【公众号名称】</p>-->
+      </div>
+    </div>
+    <div class="copy">© <span id="year"></span> 信阳农林学院红翼先锋队 · 追寻红色足迹，传承革命薪火</div>
+  </footer>
+
+  <button class="to-top" id="to-top" type="button" aria-label="返回顶部">↑</button>
+  <script src="js/main.js"></script>
+</body>
+</html>

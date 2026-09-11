@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#C91F1B" />
+  <title>团队风采 · 信阳农林学院红翼先锋队</title>
+  <meta name="description" content="信阳农林学院红翼先锋队（航空服务艺术与管理专业）导师阵容：校内指导教师 11 人 + 深圳/春秋/海南/山东/成都航空行业导师 6 人 + 校外顾问；含志愿服务队组织架构与成员服务感言。" />
+  <link rel="icon" type="image/png" sizes="32x32" href="images/brand/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="images/brand/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="images/brand/apple-touch-icon.png" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- 图片缺失时自动显示提示占位块；头像图缺失则露出底下的文字头像（无需改动） -->
+  <script>
+    document.documentElement.classList.add('js');
+    window.addEventListener('error', function (e) {
+      var t = e.target;
+      if (!t || t.tagName !== 'IMG' || t.dataset.ph) return;
+      t.dataset.ph = '1';
+      if (t.classList.contains('avatar-img') || t.classList.contains('slide-img')) { t.style.display = 'none'; return; }
+      var d = document.createElement('div');
+      d.className = 'ph';
+      d.textContent = t.alt || '图片待添加';
+      t.replaceWith(d);
+    }, true);
+  </script>
+</head>
+
+<body>
+
+  <!-- ================= 顶部导航 ================= -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">
+        <img class="brand-mark" src="images/brand/brand-logo.png" alt="红翼先锋队队徽" height="36" />
+        <span>
+          <span class="brand-name">信阳农林学院红翼先锋队</span>
+          <span class="brand-sub">民航普惠应急科普公益行动</span>
+        </span>
+      </a>
+
+      <button class="menu-btn" id="menu-btn" type="button" aria-label="打开菜单" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="main-nav" id="site-nav" aria-label="主导航">
+        <a href="index.html">首页</a>
+        <a href="about.html">项目概况</a>
+        <a href="team.html" class="active">团队风采</a>
+        <a href="activities.html">活动纪实</a>
+        <a href="resources.html">科普资源库</a>
+        <a href="join.html">加入我们</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ================= 页面标题横幅 ================= -->
+  <section class="page-hero">
+    <h1>团队风采</h1>
+    <p class="crumb"><a href="index.html">首页</a> / 团队风采</p>
+    <p style="margin-top:16px; max-width:700px; margin-left:auto; margin-right:auto; color:rgba(255,255,255,.85);">
+      信阳农林学院航空服务艺术与管理专业「红翼先锋队」<br />
+      高校教师 + 航司行业导师 + 红十字会顾问三重把关，青年志愿者躬身实践
+    </p>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <!-- 快速跳转标签 -->
+      <div class="chipbar">
+        <a class="chip" href="#mentors">导师阵容墙</a>
+        <a class="chip" href="#org">组织架构</a>
+        <a class="chip" href="#volunteers">志愿风采墙</a>
+      </div>
+
+      <!-- ================================================================
+           模块一 · 导师阵容墙
+           照片放置：images/team/
+             - 校内指导教师：images/team/school-1.jpg ~ school-3.jpg
+             - 航司行业导师：images/team/airline-1.jpg ~ airline-6.jpg
+             - 校外顾问：images/team/advisor-1.jpg ~ advisor-2.jpg
+           没有照片时自动显示文字头像（校 / 深 / 春 / 海 / 山 / 成 / 问），不会出现破图。
+           ★ 依据项目申报书：指导教师共 11 人（航空服务专业教师 4 人、企业教师 6 人、思政教师 1 人）；
+             申报书表格未列姓名，故姓名处留【待填】占位，各单位"分工"与"具体指导内容"按申报书录入。
+           ================================================================ -->
+      <div class="album" id="mentors">
+        <div class="album-head">
+          <span class="album-num">01</span>
+          <h2 class="album-title">导师阵容墙</h2>
+          <span class="album-meta">11 位指导教师 + 2 位校外顾问</span>
+        </div>
+        <p class="album-desc">
+          团队实行"高校教师 + 航司行业导师"双导师制：校内教师负责实操技能教学与课程统筹，
+          航司导师把民航标准化的安全与应急体系转化为群众听得懂、学得会的科普课程，
+          红十字会培训师提供专业顾问支持。
+        </p>
+
+        <div class="stats" style="margin-bottom:26px;">
+          <div class="stat">
+            <div class="num">4<small>人</small></div>
+            <div class="label">航空服务专业教师</div>
+            <div class="src">校内指导</div>
+          </div>
+          <div class="stat blue">
+            <div class="num">6<small>人</small></div>
+            <div class="label">航司企业教师</div>
+            <div class="src">深圳 / 春秋 / 海南 / 山东 / 成都</div>
+          </div>
+          <div class="stat">
+            <div class="num">1<small>人</small></div>
+            <div class="label">思政教师</div>
+            <div class="src">红色文化价值引领</div>
+          </div>
+         <!-- <div class="stat blue">
+            <div class="num">2<small>位</small></div>
+            <div class="label">校外顾问</div>
+            <div class="src">田铺乡社区主任 · 红十字会讲师</div>
+          </div>-->
+        </div>
+
+        <!-- ---------- 校内指导教师 ---------- -->
+        <div class="sub-head">校内指导教师</div>
+        <div class="cards">
+          <div class="card mentor-card">
+            <div class="avatar red">
+              <span>校</span>
+              <img class="avatar-img" src="images/team/school-1.jpg" alt="" loading="lazy" />
+            </div>
+            <h3><!--【姓名】--></h3>
+            <p class="mentor-role">航空服务艺术与管理专业教师 · 信阳农林学院</p>
+            <span class="airline-badge red">统筹 · 实操技能教学</span>
+            <div class="tag-list">
+              <span class="tag red">心肺复苏术</span>
+              <span class="tag red">海姆立克急救法</span>
+              <span class="tag red">包扎 · 止血 · 固定 · 搬运</span>
+              <span class="tag red">常见急症应急处理</span>
+            </div>
+          </div>
+
+          <div class="card mentor-card">
+            <div class="avatar red">
+              <span>校</span>
+              <img class="avatar-img" src="images/team/school-2.jpg" alt="" loading="lazy" />
+            </div>
+            <h3><!--【姓名】--></h3>
+            <p class="mentor-role">航空服务艺术与管理专业教师 · 信阳农林学院</p>
+            <span class="airline-badge red">实操技能教学</span>
+            <div class="tag-list">
+              <span class="tag red">服务礼仪</span>
+              <span class="tag red">职业形象</span>
+              <span class="tag red">交流与沟通技巧</span>
+            </div>
+          </div>
+
+          <div class="card mentor-card">
+            <div class="avatar red">
+              <span>校</span>
+              <img class="avatar-img" src="images/team/school-3.jpg" alt="" loading="lazy" />
+            </div>
+            <h3><!--【姓名】--></h3>
+            <p class="mentor-role">旅游管理专业教师 · 信阳农林学院</p>
+            <span class="airline-badge red">团队运营指导</span>
+            <div class="tag-list">
+              <span class="tag red">红色故事挖掘</span>
+              <span class="tag red">新媒体运营</span>
+            </div>
+          </div>
+        </div>
+        <p class="muted-note" style="margin-top:14px;">
+          校内指导教师团队共 11 人（航空服务专业教师 4 人、企业教师 6 人、思政教师 1 人），此处展示主要分工。
+          另有航空服务专业教师多人参与课程开发与集训带教。
+        </p>
+
+        <!-- ---------- 航司行业导师 ---------- -->
+        <div class="sub-head blue" style="margin-top:40px;">航司行业导师</div>
+        <p class="muted-note" style="margin-bottom:14px;">
+          五家航司的导师各带一块专业强项，共同支撑课程开发、技能集训、宣讲话术与青少年模块设计。
+        </p>
+        <div class="cards">
+          <div class="card mentor-card">
+            <div class="avatar">
+              <span>深</span>
+              <img class="avatar-img" src="images/team/airline-1.jpg" alt="" loading="lazy" />
+            </div>
+            <h3><!--【姓名】--></h3>
+            <p class="mentor-role"> 深圳航空</p>
+            <span class="airline-badge">深圳航空 · 统筹指导</span>
+            <div class="tag-list">
+              <span class="tag">航司标准应急培训体系转化</span>
+              <span class="tag">CPR / 急救 / 撤离简化课程</span>
+              <span class="tag">教学 PPT 与流程审核</span>
+            </div>
+          </div>
+
+          <div class="card mentor-card">
+            <div class="avatar">
+              <span>春</span>
+              <img class="avatar-img" src="images/team/airline-2.jpg" alt="" loading="lazy" />
+            </div>
+            <h3><!--【姓名】--></h3>
+            <p class="mentor-role">春秋航空</p>
+            <span class="airline-badge">春秋航空 · 实操技能与教员培训</span>
+            <div class="tag-list">
+              <span class="tag">志愿者应急技能集训</span>
+              <span class="tag">模拟真实场景演练</span>
+              <span class="tag">急救辅助教员资质指导</span>
+            </div>
+          </div>
+
+          <div class="card mentor-card">
+            <div class="avatar">
+              <span>海</span>
+              <img class="avatar-img" src="images/team/airline-3.jpg" alt="" loading="lazy" />
+            </div>
+            <h3><!--【姓名】--></h3>
+            <p class="mentor-role"> 海南航空</p>
+            <span class="airline-badge">海南航空 · 服务礼仪与宣讲话术</span>
+            <div class="tag-list">
+              <span class="tag">服务礼仪</span>
+              <span class="tag">亲和沟通</span>
+              <span class="tag">宣讲话术设计</span>
+            </div>
+          </div>
+
+          <div class="card mentor-card">
+            <div class="avatar">
+              <span>山</span>
+              <img class="avatar-img" src="images/team/airline-4.jpg" alt="" loading="lazy" />
+            </div>
+            <h3><!--【姓名】--></h3>
+            <p class="mentor-role"> 山东航空</p>
+            <span class="airline-badge">山东航空 · 安全文化传播与品牌建设</span>
+            <div class="tag-list">
+              <span class="tag">"预防第一"理念融入红色故事</span>
+              <span class="tag">手册与短视频专业性指导</span>
+            </div>
+          </div>
+
+          <div class="card mentor-card">
+            <div class="avatar">
+              <span>成</span>
+              <img class="avatar-img" src="images/team/airline-5.jpg" alt="" loading="lazy" />
+            </div>
+            <h3><!--【姓名】--></h3>
+            <p class="mentor-role">成都航空</p>
+            <span class="airline-badge">成都航空 · 青少年安全教育</span>
+            <div class="tag-list">
+              <span class="tag">中小学科普模块设计</span>
+              <span class="tag">角色扮演 · 安全小剧场</span>
+              <span class="tag">借鉴"飞行体验营"经验</span>
+            </div>
+          </div>
+
+          <div class="card mentor-card">
+            <div class="avatar">
+              <span>春</span>
+              <img class="avatar-img" src="images/team/airline-6.jpg" alt="" loading="lazy" />
+            </div>
+            <h3><!--【姓名】--></h3>
+            <p class="mentor-role"> 春秋航空</p>
+            <span class="airline-badge">春秋航空 · 社区动员与资源对接</span>
+            <div class="tag-list">
+              <span class="tag">航司 CSR 资源对接</span>
+              <span class="tag">公益赞助争取</span>
+              <span class="tag">社区与学校长期合作指导</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ---------- 校外顾问 ---------- -->
+        <!--<div class="sub-head blue" style="margin-top:40px;">校外顾问</div>
+        <div class="cards">
+          <div class="card mentor-card">
+            <div class="avatar">
+              <span>问</span>
+              <img class="avatar-img" src="images/team/advisor-1.jpg" alt="" loading="lazy" />
+            </div>
+            <h3>【姓名】</h3>
+            <p class="mentor-role">新县田铺乡社区主任</p>
+            <span class="airline-badge">已对接</span>
+            <div class="tag-list">
+              <span class="tag">场地协调</span>
+              <span class="tag">群众组织动员</span>
+            </div>
+          </div>
+
+          <div class="card mentor-card">
+            <div class="avatar">
+              <span>问</span>
+              <img class="avatar-img" src="images/team/advisor-2.jpg" alt="" loading="lazy" />
+            </div>
+            <h3>【姓名】</h3>
+            <p class="mentor-role">信阳红十字会高级讲师</p>
+            <span class="airline-badge">意向顾问</span>
+            <div class="tag-list">
+              <span class="tag">急救教学专业指导</span>
+              <span class="tag">救护员证培训</span>
+            </div>
+          </div>
+        </div>-->
+
+        <div class="notice" style="margin-top:26px;">
+          <b>专业背书与安全底线：</b>所有面向群众的应急科普课程，先由指导教师与航司导师审核内容要点，
+          再由学生志愿者授课；团队成员须通过校内航空应急课程考核，最好考取红十字会救护员证；
+          每场活动配备安全员全程监督实操环节，全体志愿者与参与群众统一购买短期意外险。
+        </div>
+      </div>
+
+      <!-- ================================================================
+           模块二 · 组织架构
+           （依据申报书：红翼航空应急志愿服务队，设统筹组、宣讲组、实操组、调研组、宣传组）
+           ================================================================ -->
+      <div class="album" id="org" style="margin-top:60px;">
+        <div class="album-head">
+          <span class="album-num">02</span>
+          <h2 class="album-title">组织架构</h2>
+          <span class="album-meta">红翼航空应急志愿服务队</span>
+        </div>
+        <p class="album-desc">
+          志愿服务队设五个工作组，核心成员 5 名统筹全项工作，每学期配备 10 名储备志愿者参与现场服务，
+          通过"红翼学分"与"1+1+N"结对保证队伍不断档。
+        </p>
+
+        <div class="org-grid">
+          <div class="org-item red">
+            <h4>统筹组</h4>
+            <p>总体统筹、对接社区与学校、活动排期与资源协调。</p>
+          </div>
+          <div class="org-item red">
+            <h4>宣讲组</h4>
+            <p>红色故事与应急科普知识宣讲、现场讲解与互动控场。</p>
+          </div>
+          <div class="org-item red">
+            <h4>实操组</h4>
+            <p>技能演示与分组实操指导、动作纠正、模拟演练组织。</p>
+          </div>
+          <div class="org-item">
+            <h4>调研组</h4>
+            <p>问卷发放与回收、数据整理、培训前后双测、调研简报。</p>
+          </div>
+          <div class="org-item">
+            <h4>宣传组</h4>
+            <p>活动宣传、应急科普视频制作、志愿团队新媒体账号运营。</p>
+          </div>
+          <div class="org-item">
+            <h4>后勤组</h4>
+            <p>活动耗材准备与发放、急救箱与教具管理、现场秩序维持。</p>
+          </div>
+        </div>
+
+        <div class="sub-head" style="margin-top:30px;">核心成员分工（5 人）</div>
+        <div class="cards">
+          <div class="card">
+            <div class="icon">①</div>
+            <h3>宣讲组 · 实操组</h3>
+            <p>辅助讲师进行红色故事和应急科普知识宣讲、技能演示与指导。</p>
+          </div>
+          <div class="card">
+            <div class="icon">②</div>
+            <h3>宣讲组 · 实操组</h3>
+            <p>辅助讲师进行红色故事和应急科普知识宣讲、技能演示与指导。</p>
+          </div>
+          <div class="card">
+            <div class="icon">③</div>
+            <h3>统筹组 · 后勤组</h3>
+            <p>对接社区与学校，负责活动耗材准备与发放。</p>
+          </div>
+          <div class="card">
+            <div class="icon">④</div>
+            <h3>调研组 · 后勤组</h3>
+            <p>发放问卷、回收数据、现场秩序维持。</p>
+          </div>
+          <div class="card">
+            <div class="icon">⑤</div>
+            <h3>宣传组</h3>
+            <p>活动宣传、应急科普视频制作、志愿团队新媒体账号运营。</p>
+          </div>
+        </div>
+
+        <div class="notice" style="margin-top:24px;">
+          <b>队伍传承机制：</b>① <b>红翼学分传承制</b> —— 参与项目服务计入航空服务专业"第二课堂"学分，稳定生源；
+          ② <b>1+1+N 结对</b> —— 1 名老队员带 1 名新队员、结对多名当地社区骨干，
+          通过培训当地人实现"学生走、技能留"；③ <b>标准化工具包</b> —— 依托《红色航空应急科普操作全手册》，
+          新队员照本宣科即可保证服务质量统一。
+        </div>
+      </div>
+
+      <!-- ================================================================
+           模块三 · 志愿风采墙
+           照片放置：images/team/member-1.jpg ~ member-12.jpg
+           感言目前为示例文案，请替换为成员的真实服务感言与故事。
+           ================================================================ -->
+      <div class="album" id="volunteers" style="margin-top:60px;">
+        <div class="album-head">
+          <span class="album-num">03</span>
+          <h2 class="album-title">志愿风采墙</h2>
+          <span class="album-meta">真实故事 · 服务感言</span>
+        </div>
+        <p class="album-desc">
+          一次讲解、一场演练、一趟走访，落在每个人身上的感受都不一样。下面是成员们的服务感言。
+          <span style="color:var(--gold-deep);"></span>
+        </p>
+
+        <div class="feel-grid">
+          <div class="feel-card">
+            <div class="avatar">
+              <span>志</span>
+              <img class="avatar-img" src="images/team/member-1.jpg" alt="" loading="lazy" />
+            </div>
+            <blockquote>
+              "在社区广场的第一次海姆立克教学，围过来的老乡比我们想象的多。有位大爷跟着练了三遍，
+              说'这个真能救命'——那一刻我知道这趟来得值。"
+            </blockquote>
+            <div class="who"><!--【姓名】 · 【年级 专业】 ·--> 宣讲组 · 实操组</div>
+          </div>
+
+          <div class="feel-card">
+            <div class="avatar">
+              <span>志</span>
+              <img class="avatar-img" src="images/team/member-2.jpg" alt="" loading="lazy" />
+            </div>
+            <blockquote>
+              "以前觉得红色教育就是参观、听讲解。真正走进将军故里、走进乡亲家里，
+              才明白'传承'两个字要落在具体的事上。"
+            </blockquote>
+            <div class="who"> 宣讲组 · 实操组</div>
+          </div>
+
+          <!--<div class="feel-card">
+            <div class="avatar">
+              <span>志</span>
+              <img class="avatar-img" src="images/team/member-3.jpg" alt="" loading="lazy" />
+            </div>
+            <blockquote>
+              "讲 CPR 时最紧张的是被追问'按多深、按多快'。为了答得上，我们把标准翻来覆去背了好多遍
+              ——这种压力推着人成长。"
+            </blockquote>
+            <div class="who">宣讲组 · 实操组</div>
+          </div>-->
+
+          <div class="feel-card">
+            <div class="avatar">
+              <span>志</span>
+              <img class="avatar-img" src="images/team/member-3.jpg" alt="" loading="lazy" />
+            </div>
+            <blockquote>
+              "有位奶奶拉着我的手说，村里离医院远，学这个心里踏实。这句话我们记了很久，
+              也是我们一次次往乡下跑的理由。"
+            </blockquote>
+            <div class="who">统筹组·后勤组</div>
+          </div>
+
+          <div class="feel-card">
+            <div class="avatar">
+              <span>志</span>
+              <img class="avatar-img" src="images/team/member-4.jpg" alt="" loading="lazy" />
+            </div>
+            <blockquote>
+              "从准备课件到现场示范，我们踩过不少坑：讲得太快、术语太多。现在学会了用方言打比方，
+              效果完全不一样。"
+            </blockquote>
+            <div class="who">调研组·后勤组</div>
+          </div>
+
+          <div class="feel-card">
+            <div class="avatar">
+              <span>志</span>
+              <img class="avatar-img" src="images/team/member-5.jpg" alt="" loading="lazy" />
+            </div>
+            <blockquote>
+              "拍摄时我总想着抓'好看的画面'，后来发现最有力量的是老乡第一次成功做出海姆立克
+              动作时的表情。"
+            </blockquote>
+            <div class="who">宣传组</div>
+          </div>
+
+          <div class="feel-card">
+            <div class="avatar">
+              <span>志</span>
+              <img class="avatar-img" src="images/team/member-6.jpg" alt="" loading="lazy" />
+            </div>
+            <blockquote>
+              "第一次独立对接社区，我把活动时间表改了五遍。活动当天看到老乡们早早搬着小板凳来占座，
+              觉得之前那些折腾都值了。"
+            </blockquote>
+            <div class="who">统筹组· 后勤组</div>
+          </div>
+
+          <div class="feel-card">
+            <div class="avatar">
+              <span>志</span>
+              <img class="avatar-img" src="images/team/member-7.jpg" alt="" loading="lazy" />
+            </div>
+            <blockquote>
+              "讲红色故事前我很紧张，怕讲得干巴巴。后来试着从爷爷辈的亲身经历讲起，
+              台下安静得能听见针掉，讲完掌声响了好久。"
+            </blockquote>
+            <div class="who">宣讲组 · 实操组</div>
+          </div>
+
+          <div class="feel-card">
+            <div class="avatar">
+              <span>志</span>
+              <img class="avatar-img" src="images/team/member-8.jpg" alt="" loading="lazy" />
+            </div>
+            <blockquote>
+              "教绷带包扎时，有个小朋友学得最快，还反过来教他奶奶。看着一大一小两个'小老师'，
+              我笑得合不拢嘴。"
+            </blockquote>
+            <div class="who">宣讲组 · 实操组</div>
+          </div>
+
+          <div class="feel-card">
+            <div class="avatar">
+              <span>志</span>
+              <img class="avatar-img" src="images/team/member-9.jpg" alt="" loading="lazy" />
+            </div>
+            <blockquote>
+              "发问卷时最怕被拒绝，结果老乡们特别配合，还拉着我们聊家常。
+              回程路上抱着厚厚一沓答卷，心里特别踏实。"
+            </blockquote>
+            <div class="who">调研组· 后勤组</div>
+          </div>
+
+          <div class="feel-card">
+            <div class="avatar">
+              <span>志</span>
+              <img class="avatar-img" src="images/team/member-10.jpg" alt="" loading="lazy" />
+            </div>
+            <blockquote>
+              "为了拍好一个镜头，我蹲在地上等了好久。剪完视频发出去，有同学留言说'看完想报名'，
+              那一刻觉得值了。"
+            </blockquote>
+            <div class="who">宣传组</div>
+          </div>
+
+          <div class="feel-card">
+            <div class="avatar">
+              <span>志</span>
+              <img class="avatar-img" src="images/team/member-11.jpg" alt="" loading="lazy" />
+            </div>
+            <blockquote>
+              "每次活动前清点急救箱、搬教具，忙得满头大汗。有人说我们像'幕后英雄'，
+              其实看到现场顺顺利利，比啥都开心。"
+            </blockquote>
+            <div class="who">统筹组 · 后勤组</div>
+          </div>
+
+          <div class="feel-card">
+            <div class="avatar">
+              <span>志</span>
+              <img class="avatar-img" src="images/team/member-12.jpg" alt="" loading="lazy" />
+            </div>
+            <blockquote>
+              "从联系教室到协调大巴，琐碎的事一件接一件。但看到队伍每次都能准时出发、平安归来，
+              就是我最踏实的成就感。"
+            </blockquote>
+            <div class="who">统筹组· 后勤组</div>
+          </div>
+        </div>
+
+        <p style="text-align:center; margin-top:32px;">
+          <a class="btn btn-red" href="join.html">想成为墙上的下一位？加入我们 →</a>
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= CTA 横幅 ================= -->
+  <section class="cta">
+    <div class="container">
+      <h2>技能要练，故事要讲</h2>
+      <p>导师把关内容，志愿者站上讲台 —— 我们的课程都放在科普资源库里，欢迎取用、转发。</p>
+      <a class="btn btn-solid" href="resources.html">进入科普资源库 →</a>
+    </div>
+  </section>
+
+  <!-- ================= 页脚 ================= -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h4>信阳农林学院红翼先锋队</h4>
+        <p>红色文化志愿行 · 以志愿之名，行传承之实。</p>
+      </div>
+      <div>
+        <h4>快速导航</h4>
+        <p><a href="index.html">首页</a></p>
+        <p><a href="about.html">项目概况</a></p>
+        <p><a href="team.html">团队风采</a></p>
+        <p><a href="activities.html">活动纪实</a></p>
+        <p><a href="resources.html">科普资源库</a></p>
+        <p><a href="join.html">加入我们</a></p>
+      </div>
+      <div>
+        <h4>联系我们</h4>
+        <p>联系人：彭思雨</p>
+        <p><a href="mailto:602519769@qq.com?subject=%E5%92%A8%E8%AF%A2%E4%BF%A1%E9%98%B3%E5%86%9C%E6%9E%97%E5%AD%A6%E9%99%A2%E7%BA%A2%E7%BF%BC%E5%85%88%E9%94%8B%E9%98%9F">邮箱：602519769@qq.com</a></p>
+        <!--<p>微信公众号：【公众号名称】--></p>
+      </div>
+    </div>
+    <div class="copy">© <span id="year"></span> 信阳农林学院红翼先锋队 · 追寻红色足迹，传承革命薪火</div>
+  </footer>
+
+  <button class="to-top" id="to-top" type="button" aria-label="返回顶部">↑</button>
+  <script src="js/main.js"></script>
+</body>
+</html>

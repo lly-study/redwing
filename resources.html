@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#C91F1B" />
+  <title>科普资源库 · 信阳农林学院红翼先锋队</title>
+  <meta name="description" content="三大保命技能（心肺复苏、海姆立克、包扎止血）分步图解、教学短视频与常见误区；航空特色专栏：紧急撤离秩序、密闭空间避险、人群踩踏自救。" />
+  <link rel="icon" type="image/png" sizes="32x32" href="images/brand/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="images/brand/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="images/brand/apple-touch-icon.png" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- 图片缺失时自动显示提示占位块；头像图缺失则露出底下的文字头像（无需改动） -->
+  <script>
+    document.documentElement.classList.add('js');
+    window.addEventListener('error', function (e) {
+      var t = e.target;
+      if (!t || t.tagName !== 'IMG' || t.dataset.ph) return;
+      t.dataset.ph = '1';
+      if (t.classList.contains('avatar-img') || t.classList.contains('slide-img')) { t.style.display = 'none'; return; }
+      var d = document.createElement('div');
+      d.className = 'ph';
+      d.textContent = t.alt || '图片待添加';
+      t.replaceWith(d);
+    }, true);
+  </script>
+</head>
+
+<body>
+
+  <!-- ================= 顶部导航 ================= -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">
+        <img class="brand-mark" src="images/brand/brand-logo.png" alt="红翼先锋队队徽" height="36" />
+        <span>
+          <span class="brand-name">信阳农林学院红翼先锋队</span>
+          <span class="brand-sub">民航普惠应急科普公益行动</span>
+        </span>
+      </a>
+
+      <button class="menu-btn" id="menu-btn" type="button" aria-label="打开菜单" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="main-nav" id="site-nav" aria-label="主导航">
+        <a href="index.html">首页</a>
+        <a href="about.html">项目概况</a>
+        <a href="team.html">团队风采</a>
+        <a href="activities.html">活动纪实</a>
+        <a href="resources.html" class="active">科普资源库</a>
+        <a href="join.html">加入我们</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ================= 页面标题横幅 ================= -->
+  <section class="page-hero">
+    <h1>科普资源库</h1>
+    <p class="crumb"><a href="index.html">首页</a> / 科普资源库</p>
+    <p style="margin-top:16px; max-width:680px; margin-left:auto; margin-right:auto; color:rgba(255,255,255,.85);">
+      三大保命技能 + 航空特色避险 —— 每一项都配"分步图解 · 教学短视频 · 常见误区"
+    </p>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="notice">
+       
+        <b>使用说明与免责声明：</b>本页内容用于应急知识科普，<b>不能替代专业培训与最新急救指南</b>。
+        遇到真实紧急情况，请第一时间拨打 <b>120</b>，并听从现场专业救护人员的指令。
+        欢迎学校、社区、村镇转发使用；如需现场教学或课程包，请通过"加入我们"页联系我们。
+      </div>
+
+      <!-- 快速跳转标签 -->
+      <div class="chipbar" style="margin-top:34px;">
+        <a class="chip" href="#cpr">保命技能一 · 心肺复苏</a>
+        <a class="chip" href="#choking">保命技能二 · 海姆立克</a>
+        <a class="chip" href="#bleeding">保命技能三 · 包扎止血</a>
+        <a class="chip" href="#aviation">航空特色专栏</a>
+      </div>
+
+      <!-- ================================================================
+           保命技能一 · 心肺复苏
+           图解海报：images/resources/cpr-poster.jpg
+           教学视频：videos/skills/cpr.mp4
+           ================================================================ -->
+      <div class="skill" id="cpr">
+        <div class="skill-head">
+          <span class="skill-num">01</span>
+          <h2 class="skill-title">心肺复苏</h2>
+          <span class="skill-en">CPR</span>
+          <span class="skill-tag">三大保命技能</span>
+        </div>
+        <p class="skill-desc">用于<b>无反应、无正常呼吸</b>的成人。判断快、按压深、中断少，是救回来的关键。</p>
+
+        <!-- 红色故事导入（申报书：刘名榜深山抢救重伤战友 / 许世友第一时间处置倒地战友） -->
+        <div class="red-story">
+          <span class="rs-tag">红色故事导入</span>
+          <h4>刘名榜深山救战友 · 许世友分秒必争处置倒地战友</h4>
+          <p>
+            大别山革命时期，刘名榜在无医无药的深山里，用胸外按压、人工通气抢救重伤战友；
+            许世友将军在冲锋中第一时间处置倒地的战友，以分秒必争的行动守护生命。
+          </p>
+          <p class="bridge">→ 这就是"黄金救援 4 分钟"的战场版本：心脏骤停后越早开始按压，救回来的机会越大。</p>
+        </div>
+
+        <div class="sub-head">分步图解</div>
+        <div class="step-grid">
+          <div class="step">
+            <span class="step-num">1</span>
+            <h4>判断意识与呼吸</h4>
+            <p>轻拍双肩、大声呼唤；同时观察胸廓起伏 5~10 秒，判断是否有正常呼吸。</p>
+          </div>
+          <div class="step">
+            <span class="step-num">2</span>
+            <h4>呼救并取 AED</h4>
+            <p>立刻拨打 120 并开启免提，指定专人去取 AED（自动体外除颤器）。</p>
+          </div>
+          <div class="step">
+            <span class="step-num">3</span>
+            <h4>胸外按压</h4>
+            <p>两乳头连线中点（胸骨下半段），双手交叠、手臂垂直，深度 5~6cm，频率 100~120 次/分，每次充分回弹。</p>
+          </div>
+          <div class="step">
+            <span class="step-num">4</span>
+            <h4>开放气道</h4>
+            <p>仰头抬颏法打开气道，清除口腔内可见异物（不要盲目往深处掏）。</p>
+          </div>
+          <div class="step">
+            <span class="step-num">5</span>
+            <h4>人工呼吸</h4>
+            <p>捏鼻、包住口唇，吹气约 1 秒至胸廓抬起；按压与吹气比例为 30:2。</p>
+          </div>
+          <div class="step">
+            <span class="step-num">6</span>
+            <h4>尽早除颤</h4>
+            <p>AED 到位立即开机，按语音提示贴片、放电，放电后马上继续按压，不要等待观察。</p>
+          </div>
+        </div>
+
+        <div class="poster" style="margin-top:16px;">
+          <!-- 图解海报：把图片命名为 images/resources/cpr-poster.jpg 放入后自动显示 -->
+          <img src="images/resources/cpr-poster.jpg" alt="心肺复苏分步图解 · 图片待放置" loading="lazy" />
+        </div>
+
+        <div class="sub-head blue">教学短视频</div>
+        <div class="video-grid">
+          <div class="video-box" style="max-width:640px;">
+            <video controls preload="none">
+              <source src="videos/skills/cpr.mp4" type="video/mp4" />
+              您的浏览器不支持视频播放。
+            </video>
+            <div class="video-cap">
+              <h3>教学短视频 · 心肺复苏完整流程</h3>
+             <!-- <p>建议 60~90 秒，只拍关键动作，配上字幕与节奏提示（100~120 次/分）效果更好。</p>-->
+            </div>
+            <p class="video-tip" hidden>视频无法播放：<b>videos/skills/cpr.mp4</b> 不存在，或编码不是浏览器支持的 <b>H.264 + AAC</b>（手机/剪辑软件常导出 H.265/HEVC，网页放不了）。转码方法见 videos\README.txt。</p>
+          </div>
+        </div>
+
+        <div class="callout-warning">
+          <span class="cw-icon">⚠️</span>
+          <div>
+            <b>最重要的一条：晕倒不要盲目扶起。</b>
+            先判断意识与呼吸 —— 有正常呼吸的人<b>不要做胸外按压</b>，可让其侧卧并观察；
+            只有<b>无反应且无正常呼吸</b>（或仅有濒死喘息）时，才立即开始心肺复苏并拨打 120。
+            不要掐人中、不要喂水、不要摇晃，也不要扶着"缓一缓"。
+          </div>
+        </div>
+
+        <div class="sub-head">常见误区</div>
+        <ul class="mistake-list">
+          <li>掐人中、喂水、摇晃、扶着坐起来"缓一缓"。</li>
+          <li>对有呼吸、有脉搏的人做胸外按压。</li>
+          <li>按压太浅、太快或太慢，中途长时间停顿（中断不要超过 10 秒）。</li>
+          <li>怕"按断肋骨"而不敢用力 —— 不按压才是最致命的风险。</li>
+          <li>只做人工呼吸、不做胸外按压（成人以持续按压为主）。</li>
+        </ul>
+      </div>
+
+      <!-- ================================================================
+           保命技能二 · 海姆立克
+           图解海报：images/resources/heimlich-poster.jpg
+           教学视频：videos/skills/heimlich.mp4
+           ================================================================ -->
+      <div class="skill" id="choking">
+        <div class="skill-head">
+          <span class="skill-num">02</span>
+          <h2 class="skill-title">海姆立克急救法</h2>
+          <span class="skill-en">CHOKING</span>
+          <span class="skill-tag">三大保命技能</span>
+        </div>
+        <p class="skill-desc">用于<b>气道异物梗阻</b>。先分清"能咳嗽"与"咳不出声"，两者处理方式完全不同。</p>
+
+        <!-- 红色故事导入（申报书：红军用腹部冲击的简易方法救助乡亲） -->
+        <div class="red-story">
+          <span class="rs-tag">红色故事导入</span>
+          <h4>红军用腹部冲击的简易方法救助乡亲</h4>
+          <p>
+            革命老区物资匮乏，老人与儿童容易发生异物卡喉。红军战士用腹部冲击的简易方法救助乡亲
+            —— 这正是海姆立克急救法的"红色雏形"。
+          </p>
+          <p class="bridge">→ 守护老区"一老一小"：一个动作、三秒救急。</p>
+        </div>
+
+        <div class="sub-head">分步图解</div>
+        <div class="step-grid">
+          <div class="step">
+            <span class="step-num">1</span>
+            <h4>识别梗阻</h4>
+            <p>双手掐喉、说不出话、咳不出声、面色发紫 —— 属于完全梗阻，必须立即施救。</p>
+          </div>
+          <div class="step">
+            <span class="step-num">2</span>
+            <h4>还能咳嗽 → 鼓励咳嗽</h4>
+            <p>不完全梗阻时鼓励其用力咳嗽，全程守在旁边观察，不要拍背乱拍、不要喂水。</p>
+          </div>
+          <div class="step">
+            <span class="step-num">3</span>
+            <h4>站位</h4>
+            <p>施救者站在其身后，一腿插在其两腿之间防摔倒，让其上身稍向前倾。</p>
+          </div>
+          <div class="step">
+            <span class="step-num">4</span>
+            <h4>定位</h4>
+            <p>一手握拳，拳眼抵在肚脐上方约两横指、剑突下方（肋骨下缘中间的空软处）。</p>
+          </div>
+          <div class="step">
+            <span class="step-num">5</span>
+            <h4>快速向内向上冲击</h4>
+            <p>另一手包住拳头，快速向内向上方冲击，每次约 1 秒，反复进行直到异物排出。</p>
+          </div>
+          <div class="step">
+            <span class="step-num">6</span>
+            <h4>特殊人群</h4>
+            <p>1 岁以下婴儿：拍背 5 次 + 胸部冲击 5 次交替；孕妇或肥胖者：改做胸部冲击；独自一人：用椅背、桌沿自我冲击。</p>
+          </div>
+        </div>
+
+        <div class="poster" style="margin-top:16px;">
+          <!-- 图解海报：把图片命名为 images/resources/heimlich-poster.jpg 放入后自动显示 -->
+          <img src="images/resources/heimlich-poster.jpg" alt="海姆立克急救法分步图解 · 图片待放置" loading="lazy" />
+        </div>
+
+        <div class="sub-head blue">教学短视频</div>
+        <div class="video-grid">
+          <div class="video-box" style="max-width:640px;">
+            <video controls preload="none">
+              <source src="videos/skills/heimlich.mp4" type="video/mp4" />
+              您的浏览器不支持视频播放。
+            </video>
+            <div class="video-cap">
+              <h3>教学短视频 · 海姆立克急救法</h3>
+              <p><!--建议同时演示"成人 / 婴儿 / 独自一人"三种情形，这是群众最容易记混的地方。--></p>
+            </div>
+            <p class="video-tip" hidden>视频无法播放：<b>videos/skills/heimlich.mp4</b> 不存在，或编码不是浏览器支持的 <b>H.264 + AAC</b>（手机/剪辑软件常导出 H.265/HEVC，网页放不了）。转码方法见 videos\README.txt。</p>
+          </div>
+        </div>
+
+        <div class="callout-warning">
+          <span class="cw-icon">⚠️</span>
+          <div>
+            <b>完全梗阻时：不要喂水、不要用手乱抠喉咙。</b>
+            喂水会把异物冲得更深，手指乱掏可能把异物推入更深的气道。
+            若对方已经昏迷倒地，应立即改为心肺复苏并呼叫 120。
+          </div>
+        </div>
+
+        <div class="sub-head">常见误区</div>
+        <ul class="mistake-list">
+          <li>鱼刺卡喉吞饭、喝醋 —— 应停止进食、及时就医。</li>
+          <li>对完全梗阻者喂水、拍背乱拍、用手抠喉。</li>
+          <li>已经昏迷倒地还继续做腹部冲击（应改为心肺复苏）。</li>
+          <li>异物排出后就不管了 —— 仍应就医检查有无损伤。</li>
+          <li>婴儿用成人腹部冲击手法（婴幼儿应用拍背 + 胸部冲击）。</li>
+        </ul>
+      </div>
+
+      <!-- ================================================================
+           保命技能三 · 包扎止血
+           图解海报：images/resources/bandage-poster.jpg
+           教学视频：videos/skills/bandage.mp4
+           ================================================================ -->
+      <div class="skill" id="bleeding">
+        <div class="skill-head">
+          <span class="skill-num">03</span>
+          <h2 class="skill-title">包扎止血</h2>
+          <span class="skill-en">BLEEDING CONTROL</span>
+          <span class="skill-tag">三大保命技能</span>
+        </div>
+        <p class="skill-desc">用于<b>外伤出血</b>。核心只有一句话：直接压迫、持续按压、不要老揭开看。</p>
+
+        <!-- 红色故事导入（申报书附件 5：许世友将军腹部中弹后的战场自救四步） -->
+        <div class="red-story">
+          <span class="rs-tag">红色故事导入</span>
+          <h4>许世友将军腹部中弹后的战场自救</h4>
+          <p>
+            土地革命战争时期，许世友在鄂豫皖苏区反"围剿"战斗中腹部中弹，伤口深、流血不止，
+            战场混乱、医护无法及时赶到，他靠四步完成自救：
+          </p>
+          <ol>
+            <li><b>紧急控伤：</b>退到战壕掩体后，用双手用力按压伤口两侧压迫血管、减缓流血，避免乱动导致伤口撕裂；</li>
+            <li><b>简易清创：</b>用随身干净布条擦去创面污物，以军中烈酒淋洒消毒（当时通用的应急消毒方式）；</li>
+            <li><b>临时包扎：</b>用干净布巾与多层粗布条层层叠压覆盖伤口，用力勒紧打结，靠压力止血、固定创面；</li>
+            <li><b>自主转移：</b>包扎后借地形掩护独自后撤数里，赶到后方救护点，最终痊愈。</li>
+          </ol>
+          <p class="bridge">→ 战地自救法升级为航空标准：按压止血 → 规范包扎 → 妥善固定 → 尽快转运，老少易学易用。</p>
+        </div>
+
+        <div class="sub-head">分步图解</div>
+        <div class="step-grid">
+          <div class="step">
+            <span class="step-num">1</span>
+            <h4>评估与防护</h4>
+            <p>确认现场安全，戴手套或用干净塑料袋隔离双手，充分暴露伤口。</p>
+          </div>
+          <div class="step">
+            <span class="step-num">2</span>
+            <h4>直接压迫</h4>
+            <p>用无菌敷料或干净布料直接压住出血点，持续按压 5~10 分钟，中间不要松开。</p>
+          </div>
+          <div class="step">
+            <span class="step-num">3</span>
+            <h4>加压包扎</h4>
+            <p>绷带自远心端向近心端缠绕，松紧以能插入一根手指为宜。</p>
+          </div>
+          <div class="step">
+            <span class="step-num">4</span>
+            <h4>抬高患肢</h4>
+            <p>四肢出血在包扎后抬高至高于心脏水平，有助于减少出血。</p>
+          </div>
+          <div class="step">
+            <span class="step-num">5</span>
+            <h4>止血带（最后手段）</h4>
+            <p>四肢大出血且压迫无效时使用，扎在伤口近心端 5~10cm 处，<b>必须记录时间</b>并尽快送医。</p>
+          </div>
+          <div class="step">
+            <span class="step-num">6</span>
+            <h4>观察末梢</h4>
+            <p>出现发紫、发凉、麻木提示包扎过紧，需立即重新包扎。</p>
+          </div>
+        </div>
+
+        <div class="poster" style="margin-top:16px;">
+          <!-- 图解海报：把图片命名为 images/resources/bandage-poster.jpg 放入后自动显示 -->
+          <img src="images/resources/bandage-poster.jpg" alt="包扎止血分步图解 · 图片待放置" loading="lazy" />
+        </div>
+
+        <div class="sub-head blue">教学短视频</div>
+        <div class="video-grid">
+          <div class="video-box" style="max-width:640px;">
+            <video controls preload="none">
+              <source src="videos/skills/bandage.mp4" type="video/mp4" />
+              您的浏览器不支持视频播放。
+            </video>
+            <div class="video-cap">
+              <h3>教学短视频 · 包扎止血与加压包扎</h3>
+              <p><!--建议演示"直接压迫 → 加压包扎 → 观察末梢"的完整顺序，并展示松紧判断方法。--></p>
+            </div>
+            <p class="video-tip" hidden>视频无法播放：<b>videos/skills/bandage.mp4</b> 不存在，或编码不是浏览器支持的 <b>H.264 + AAC</b>（手机/剪辑软件常导出 H.265/HEVC，网页放不了）。转码方法见 videos\README.txt。</p>
+          </div>
+        </div>
+
+        <div class="callout-warning">
+          <span class="cw-icon">⚠️</span>
+          <div>
+            <b>不要频繁揭开敷料"看看止血没有"</b> —— 每揭开一次就会再次出血。
+            也不要在伤口上撒药粉、香灰、烟丝等土办法，会造成创面污染、影响后续清创。
+            鼻出血应<b>低头、捏住鼻翼</b>，不要仰头。
+          </div>
+        </div>
+
+        <div class="sub-head">常见误区</div>
+        <ul class="mistake-list">
+          <li>用细绳、电线、布条当止血带（应使用专用止血带或宽扁布带）。</li>
+          <li>往伤口撒云南白药粉、香灰、烟丝等（污染创面）。</li>
+          <li>鼻出血仰头（血液倒流可能误吸，应低头捏鼻翼）。</li>
+          <li>大面积出血先冲洗、先消毒（应先压迫止血，再处理创面）。</li>
+          <li>扎了止血带不记录时间、长时间不松解（需尽快送医由专业人员处理）。</li>
+        </ul>
+      </div>
+
+      <!-- ================================================================
+           航空特色专栏
+           突出民航差异化优势：把客舱安全训练中的标准动作，转化为日常场景的自救方法
+           ================================================================ -->
+      <div class="album" id="aviation" style="margin-top:20px;">
+        <div class="album-head">
+          <span class="album-num">✦</span>
+          <h2 class="album-title">航空特色专栏</h2>
+          <span class="album-meta">民航差异化优势</span>
+        </div>
+        <p class="album-desc">
+          客舱安全训练里有一套非常成熟的标准动作 —— 撤离讲秩序、密闭空间讲判断、人群聚集讲自救、
+          包扎讲规范。这些技能挪到地面场景（大巴、电梯、商场、集会、田间地头）同样管用，
+          这正是本项目"20% 航空特色"的部分，也是我们区别于普通急救科普的地方。
+          每一项都能接上大别山红色故事：红军突围转移时的有序撤离、深山救护时的规范包扎。
+        </p>
+
+        <!-- ---------- 3.1 紧急撤离秩序 ---------- -->
+        <div class="sub-head blue">一 · 紧急撤离秩序（90 秒原则）</div>
+        <div class="step-grid">
+          <div class="step">
+            <span class="step-num">1</span>
+            <h4>起飞前先"数出口"</h4>
+            <p>记住离你最近的出口隔几排、有几个出口 —— 烟雾中视线差，靠记忆而不是靠眼睛找。</p>
+          </div>
+          <div class="step">
+            <span class="step-num">2</span>
+            <h4>指令一下，立即执行</h4>
+            <p>听到撤离指令马上行动，不要犹豫、不要等别人先动。</p>
+          </div>
+          <div class="step">
+            <span class="step-num">3</span>
+            <h4>绝不携带行李</h4>
+            <p>拿行李会堵住通道、划破滑梯，是撤离中最致命的错误之一。</p>
+          </div>
+          <div class="step">
+            <span class="step-num">4</span>
+            <h4>低姿态快速移动</h4>
+            <p>烟雾中俯身贴地呼吸，沿通道快速移动但不推挤。</p>
+          </div>
+          <div class="step">
+            <span class="step-num">5</span>
+            <h4>滑梯姿势与落地</h4>
+            <p>双臂交叉抱胸、双腿并拢、身体前倾下滑；落地后立即起身向前快跑，不要停留。</p>
+          </div>
+          <div class="step">
+            <span class="step-num">6</span>
+            <h4>撤离后远离</h4>
+            <p>逆风远离飞机或车辆，不返回取物、不围观。</p>
+          </div>
+        </div>
+        <div class="callout-warning">
+          <span class="cw-icon">⚠️</span>
+          <div><b>撤离时抢拿行李 = 堵住别人的生路。</b>研究反复证明，行李是延缓撤离、造成伤亡的首要原因。</div>
+        </div>
+        <div class="sub-head">常见误区</div>
+        <ul class="mistake-list">
+          <li>撤离时抢拿行李、打开行李架。</li>
+          <li>逆向跑回座位找同伴或物品。</li>
+          <li>在滑梯底部停留、拍照，堵住后来的人。</li>
+          <li>站着跑过浓烟区（应俯身低姿）。</li>
+        </ul>
+
+        <!-- ---------- 3.2 密闭空间避险 ---------- -->
+        <div class="sub-head blue" style="margin-top:40px;">二 · 密闭空间避险</div>
+        <div class="step-grid">
+          <div class="step">
+            <span class="step-num">1</span>
+            <h4>进门先找出口</h4>
+            <p>进入机舱、电梯、大巴、影院等密闭空间，先确认最近出口与疏散通道位置。</p>
+          </div>
+          <div class="step">
+            <span class="step-num">2</span>
+            <h4>失压：先戴自己的面罩</h4>
+            <p>氧气面罩脱落时，先给自己戴好，再帮助身边的儿童或老人 —— 先自保才能救他人。</p>
+          </div>
+          <div class="step">
+            <span class="step-num">3</span>
+            <h4>防冲撞姿势</h4>
+            <p>弯腰低头、双手抱头或紧抓前方椅背，双脚踩实地面，减少冲击伤害。</p>
+          </div>
+          <div class="step">
+            <span class="step-num">4</span>
+            <h4>火情烟雾处置</h4>
+            <p>低姿匍匐、用湿布掩住口鼻；开门前先用手背试门把手温度，发烫不要开门。</p>
+          </div>
+          <div class="step">
+            <span class="step-num">5</span>
+            <h4>听从指挥、保持通道畅通</h4>
+            <p>服从机组与工作人员指令，不擅自行动，不把行李放在通道上。</p>
+          </div>
+        </div>
+        <div class="callout-warning">
+          <span class="cw-icon">⚠️</span>
+          <div><b>失压时先给孩子戴面罩、自己没戴，是最常见的错误。</b>缺氧十几秒就会失去判断力，两人都会陷入危险。</div>
+        </div>
+        <div class="sub-head">常见误区</div>
+        <ul class="mistake-list">
+          <li>失压时先帮别人戴面罩，自己后戴或不戴。</li>
+          <li>站立奔跑穿过浓烟区。</li>
+          <li>慌乱中打开可能发烫的门。</li>
+          <li>把行李放在通道、出口附近。</li>
+        </ul>
+
+        <!-- ---------- 3.3 人群踩踏自救 ---------- -->
+        <div class="sub-head blue" style="margin-top:40px;">三 · 人群踩踏自救</div>
+        <div class="step-grid">
+          <div class="step">
+            <span class="step-num">1</span>
+            <h4>及早识别风险</h4>
+            <p>人流突然静止、出现明显推挤、有人呼喊或摔倒 —— 这时就要立刻做防护动作。</p>
+          </div>
+          <div class="step">
+            <span class="step-num">2</span>
+            <h4>保持站立</h4>
+            <p>尽量不倒地。双臂交叉抱住胸前，为自己留出呼吸空间；或双手护住太阳穴与后颈。</p>
+          </div>
+          <div class="step">
+            <span class="step-num">3</span>
+            <h4>顺流斜向移动</h4>
+            <p>顺着人流方向斜向移动，寻找墙角、柱子等坚固掩体，不要逆行、不要推挤他人。</p>
+          </div>
+          <div class="step">
+            <span class="step-num">4</span>
+            <h4>不弯腰捡东西</h4>
+            <p>手机、鞋子掉了都不要弯腰，弯腰瞬间极易被推倒。</p>
+          </div>
+          <div class="step">
+            <span class="step-num">5</span>
+            <h4>已倒地：侧卧蜷缩护头颈</h4>
+            <p>侧卧、双手抱头护住头颈，蜷缩身体，尽量靠近墙角或坚固物，等到人流稍缓再起身。</p>
+          </div>
+        </div>
+        <div class="callout-warning">
+          <span class="cw-icon">⚠️</span>
+          <div><b>踩踏中"逆行"和"蹲下"是最危险的两个动作。</b>逆流会被推倒，蹲下则会被直接踩过。</div>
+        </div>
+        <div class="sub-head">常见误区</div>
+        <ul class="mistake-list">
+          <li>逆着人流硬挤，或用力推前面的人。</li>
+          <li>蹲下系鞋带、捡手机。</li>
+          <li>倒地后仰面平躺（应侧卧蜷缩、护住头颈）。</li>
+          <li>脱险后停在出口处围观，阻碍后续疏散。</li>
+        </ul>
+
+        <!-- ---------- 3.4 航空级规范包扎法（申报书 20% 航空特色内容） ---------- -->
+        <div class="sub-head blue" style="margin-top:40px;">四 · 航空级规范包扎法</div>
+        <p class="muted-note" style="margin-bottom:14px;">
+          航空客舱急救要求"动作标准化、低容错"，以下技法源自客舱急救训练，同样适用于家庭与田间地头。
+        </p>
+        <div class="step-grid">
+          <div class="step">
+            <span class="step-num">1</span>
+            <h4>8 字包扎法</h4>
+            <p>适用于腕、踝、肘、膝等关节：以关节为中心交叉缠绕成"8"字，松紧以能插入一指为宜。</p>
+          </div>
+          <div class="step">
+            <span class="step-num">2</span>
+            <h4>帽式包扎法</h4>
+            <p>适用于头顶外伤：三角巾底边置于前额，顶角向后覆盖头顶，两底角经耳上绕至枕后交叉、打结固定。</p>
+          </div>
+          <div class="step">
+            <span class="step-num">3</span>
+            <h4>螺旋反折包扎法</h4>
+            <p>适用于粗细不均的肢体（前臂、小腿）：每圈反折一次，反折点对齐成一条线，覆盖均匀不松动。</p>
+          </div>
+          <div class="step">
+            <span class="step-num">4</span>
+            <h4>固定术</h4>
+            <p>骨折或疑似骨折时，就地取材（木板、硬纸板、毛巾卷）固定伤处上下两个关节，固定后检查末梢循环。</p>
+          </div>
+          <div class="step">
+            <span class="step-num">5</span>
+            <h4>搬运术</h4>
+            <p>疑有脊柱损伤者严禁随意搬动；一般伤者可用双人扶行、椅式搬运或平托搬运，动作同步、保持平稳。</p>
+          </div>
+          <div class="step">
+            <span class="step-num">6</span>
+            <h4>氧气面罩与 AED</h4>
+            <p>密闭空间缺氧时优先使用氧气面罩（先自己后他人）；AED 到位后按语音提示贴片、放电，放电后立即继续按压。</p>
+          </div>
+        </div>
+        <div class="callout-warning">
+          <span class="cw-icon">⚠️</span>
+          <div>
+            <b>包扎的核心是"压力止血 + 妥善固定"，不是"包得好看"。</b>
+            包扎过紧会导致末梢坏死（发紫、发凉、麻木），过松则止不住血 —— 松紧以能插入一根手指为宜。
+          </div>
+        </div>
+        <div class="sub-head">常见误区</div>
+        <ul class="mistake-list">
+          <li>用细绳、电线、布条当止血带或扎带（会造成组织切割伤）。</li>
+          <li>扎得过紧不松解、不观察末梢（发紫发凉需立即重新包扎）。</li>
+          <li>骨折后强行复位，或随意搬动疑似脊柱损伤者。</li>
+          <li>在伤口上撒药粉、香灰等土办法。</li>
+        </ul>
+      </div>
+
+      <p style="text-align:center; margin-top:40px;">
+        <a class="btn btn-red" href="join.html">想把这些技能讲给更多人？加入我们 →</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= CTA 横幅 ================= -->
+  <section class="cta">
+    <div class="container">
+      <h2>把"保命技能"送到群众身边</h2>
+      <p>红色故事宣讲 + 应急科普实操，是我们每次进乡村、进社区、进校园的固定组合。</p>
+      <a class="btn btn-solid" href="activities.html">看看我们走过的足迹 →</a>
+    </div>
+  </section>
+
+  <!-- ================= 页脚 ================= -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h4>信阳农林学院红翼先锋队</h4>
+        <p>红色文化志愿行 · 以志愿之名，行传承之实。</p>
+      </div>
+      <div>
+        <h4>快速导航</h4>
+        <p><a href="index.html">首页</a></p>
+        <p><a href="about.html">项目概况</a></p>
+        <p><a href="team.html">团队风采</a></p>
+        <p><a href="activities.html">活动纪实</a></p>
+        <p><a href="resources.html">科普资源库</a></p>
+        <p><a href="join.html">加入我们</a></p>
+      </div>
+      <div>
+       <h4>联系我们</h4>
+        <p>联系人：彭思雨</p>
+        <p><a href="mailto:602519769@qq.com?subject=%E5%92%A8%E8%AF%A2%E4%BF%A1%E9%98%B3%E5%86%9C%E6%9E%97%E5%AD%A6%E9%99%A2%E7%BA%A2%E7%BF%BC%E5%85%88%E9%94%8B%E9%98%9F">邮箱：602519769@qq.com</a></p>
+        <!--<p>微信公众号：【公众号名称】</p>-->
+      </div>
+    </div>
+    <div class="copy">© <span id="year"></span> 信阳农林学院红翼先锋队 · 追寻红色足迹，传承革命薪火</div>
+  </footer>
+
+  <button class="to-top" id="to-top" type="button" aria-label="返回顶部">↑</button>
+  <script src="js/main.js"></script>
+</body>
+</html>

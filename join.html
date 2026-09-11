@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#C91F1B" />
+  <title>加入我们 · 信阳农林学院红翼先锋队</title>
+  <meta name="description" content="加入信阳农林学院红翼先锋队，一起参与红色文化旅游志愿服务。" />
+  <link rel="icon" type="image/png" sizes="32x32" href="images/brand/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="images/brand/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="images/brand/apple-touch-icon.png" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- 图片缺失时自动显示提示占位块；头像图缺失则露出底下的文字头像（无需改动） -->
+  <script>
+    document.documentElement.classList.add('js');
+    window.addEventListener('error', function (e) {
+      var t = e.target;
+      if (!t || t.tagName !== 'IMG' || t.dataset.ph) return;
+      t.dataset.ph = '1';
+      if (t.classList.contains('avatar-img') || t.classList.contains('slide-img')) { t.style.display = 'none'; return; }
+      var d = document.createElement('div');
+      d.className = 'ph';
+      d.textContent = t.alt || '图片待添加';
+      t.replaceWith(d);
+    }, true);
+  </script>
+</head>
+
+<body>
+
+  <!-- ================= 顶部导航 ================= -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">
+        
+        <img class="brand-mark" src="images/brand/brand-logo.png" alt="红翼先锋队队徽" height="36" />
+        <span>
+          <span class="brand-name">信阳农林学院红翼先锋队</span>
+          <span class="brand-sub">民航普惠应急科普公益行动</span>
+        </span>
+      </a>
+
+      <button class="menu-btn" id="menu-btn" type="button" aria-label="打开菜单" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="main-nav" id="site-nav" aria-label="主导航">
+        <a href="index.html">首页</a>
+        <a href="about.html">项目概况</a>
+        <a href="team.html">团队风采</a>
+        <a href="activities.html">活动纪实</a>
+        <a href="resources.html">科普资源库</a>
+        <a href="join.html" class="active">加入我们</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ================= 页面标题横幅 ================= -->
+  <section class="page-hero">
+    <h1>加入我们</h1>
+    <p class="crumb"><a href="index.html">首页</a> / 加入我们</p>
+    <p style="margin-top:16px; max-width:640px; margin-left:auto; margin-right:auto; color:rgba(255,255,255,.85);">
+      面向信阳农林学院航空服务艺术与管理专业在校生，也欢迎其他专业同学加入储备志愿者队伍
+    </p>
+  </section>
+
+  <!-- ================= 招募说明 ================= -->
+  <section class="section" id="roles">
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">JOIN US</span>
+        <h2 class="section-title">我们期待这样的你</h2>
+        <div class="title-line"></div>
+      </div>
+
+      <div class="cards">
+        <div class="card">
+          <div class="icon">🎙️</div>
+          <h3>宣讲组 · 实操组</h3>
+          <p>红色故事宣讲、应急科普知识讲解、技能演示与分组实操指导；
+            经技能集训并通过考核后上台授课。</p>
+        </div>
+        <div class="card">
+          <div class="icon">📋</div>
+          <h3>调研组 · 后勤组</h3>
+          <p>问卷发放与回收、数据整理与培训前后双测；活动耗材准备发放、现场秩序维持。</p>
+        </div>
+        <div class="card">
+          <div class="icon">📷</div>
+          <h3>宣传组</h3>
+          <p>活动摄影摄像与影像归档、应急科普短视频制作、图文手册与团队新媒体账号运营。</p>
+        </div>
+      </div>
+
+      <div class="notice">
+        <b>基本要求：</b>以信阳农林学院航空服务艺术与管理专业在校学生为主，其他专业同学可加入储备志愿者队伍；
+        须通过校内航空应急课程考核，并考取红十字会救护员证后方可上台授课；每学期提前储备 10 名后备志愿者，
+        参与项目服务可计入航空服务专业"第二课堂"学分（红翼学分）。
+        <br />
+        <b>服务地点与时间：</b>核心区域为新县田铺乡将军故里周边社区、村委会与乡村文化广场，
+        拓展至鄂豫皖苏区首府博物馆周边社区、新县城区中小学与乡村敬老院；常态化每月 2 场，
+        一般安排在非农忙期的上午 9 点后或下午 3 点后。
+        <!-- 提示：以上依据项目申报书；如需补充专业、年级限制请在此修改 -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 参与方式 / 联系方式 ================= -->
+  <section class="section alt" id="contact">
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">CONTACT</span>
+        <h2 class="section-title">参与方式与联系方式</h2>
+        <div class="title-line"></div>
+        <p class="section-sub"></p>
+      </div>
+
+      <div class="cards">
+        <div class="card contact-card">
+          <div class="icon">👤</div>
+          <h3>联系负责人</h3>
+          <p>彭思雨<br />电话：15517789302</p>
+        </div>
+        <div class="card contact-card">
+          <div class="icon">✉️</div>
+          <h3>邮箱</h3>
+          <p><a href="mailto:602519769@qq.com?subject=%E7%94%B3%E8%AF%B7%E5%8A%A0%E5%85%A5%E4%BF%A1%E9%98%B3%E5%86%9C%E6%9E%97%E5%AD%A6%E9%99%A2%E7%BA%A2%E7%BF%BC%E5%85%88%E9%94%8B%E9%98%9F">602519769@qq.com</a><br />邮件请注明「加入信阳农林学院红翼先锋队」</p>
+        </div>
+        <!--<div class="card contact-card">
+          <div class="icon">💬</div>
+          <h3>微信 / 公众号</h3>
+          <p>微信号：【微信号】<br />公众号：【公众号名称】</p>
+        </div>-->
+      </div>
+
+      <p style="text-align:center; margin-top:34px;">
+        <a class="btn btn-red" href="mailto:602519769@qq.com?subject=%E7%94%B3%E8%AF%B7%E5%8A%A0%E5%85%A5%E4%BF%A1%E9%98%B3%E5%86%9C%E6%9E%97%E5%AD%A6%E9%99%A2%E7%BA%A2%E7%BF%BC%E5%85%88%E9%94%8B%E9%98%9F">发送加入申请 →</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= CTA 横幅 ================= -->
+  <section class="cta">
+    <div class="container">
+      <h2>先看看我们的足迹</h2>
+      <p>在决定加入之前，欢迎先浏览活动影像，感受我们一路走来的红色旅程。</p>
+      <a class="btn btn-solid" href="activities.html">前往活动纪实 →</a>
+    </div>
+  </section>
+
+  <!-- ================= 页脚 ================= -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h4>信阳农林学院红翼先锋队</h4>
+        <p>红色文化志愿行 · 以志愿之名，行传承之实。</p>
+      </div>
+      <div>
+        <h4>快速导航</h4>
+        <p><a href="index.html">首页</a></p>
+        <p><a href="about.html">项目概况</a></p>
+        <p><a href="team.html">团队风采</a></p>
+        <p><a href="activities.html">活动纪实</a></p>
+        <p><a href="resources.html">科普资源库</a></p>
+        <p><a href="join.html">加入我们</a></p>
+      </div>
+      <div>
+       <h4>联系我们</h4>
+        <p>联系人：彭思雨</p>
+        <p><a href="mailto:602519769@qq.com?subject=%E7%94%B3%E8%AF%B7%E5%8A%A0%E5%85%A5%E4%BF%A1%E9%98%B3%E5%86%9C%E6%9E%97%E5%AD%A6%E9%99%A2%E7%BA%A2%E7%BF%BC%E5%85%88%E9%94%8B%E9%98%9F">邮箱：602519769@qq.com</a></p>
+        <!--<p>微信公众号：【公众号名称】</p>-->
+      </div>
+    </div>
+    <div class="copy">© <span id="year"></span> 信阳农林学院红翼先锋队 · 追寻红色足迹，传承革命薪火</div>
+  </footer>
+
+  <button class="to-top" id="to-top" type="button" aria-label="返回顶部">↑</button>
+  <script src="js/main.js"></script>
+</body>
+</html>

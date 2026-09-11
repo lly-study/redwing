@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#C91F1B" />
+  <title>项目概况 · 红翼守护·将军故里 | 信阳农林学院红翼先锋队</title>
+  <meta name="description" content="红翼守护·将军故里——民航普惠应急科普公益行动项目概况：项目背景与痛点数据、国家到地方的三级政策支持、六大核心创新、核心优势壁垒、六步法标准执行流程、可交付成果与未来规划。" />
+  <link rel="icon" type="image/png" sizes="32x32" href="images/brand/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="images/brand/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="images/brand/apple-touch-icon.png" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- 图片缺失时自动显示提示占位块；头像图缺失则露出底下的文字头像（无需改动） -->
+  <script>
+    document.documentElement.classList.add('js');
+    window.addEventListener('error', function (e) {
+      var t = e.target;
+      if (!t || t.tagName !== 'IMG' || t.dataset.ph) return;
+      t.dataset.ph = '1';
+      if (t.classList.contains('avatar-img') || t.classList.contains('slide-img')) { t.style.display = 'none'; return; }
+      var d = document.createElement('div');
+      d.className = 'ph';
+      d.textContent = t.alt || '图片待添加';
+      t.replaceWith(d);
+    }, true);
+  </script>
+</head>
+
+<body>
+
+  <!-- ================= 顶部导航 ================= -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">
+        <img class="brand-mark" src="images/brand/brand-logo.png" alt="红翼先锋队队徽" height="36" />
+        <span>
+          <span class="brand-name">信阳农林学院红翼先锋队</span>
+          <span class="brand-sub">民航普惠应急科普公益行动</span>
+        </span>
+      </a>
+
+      <button class="menu-btn" id="menu-btn" type="button" aria-label="打开菜单" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="main-nav" id="site-nav" aria-label="主导航">
+        <a href="index.html">首页</a>
+        <a href="about.html" class="active">项目概况</a>
+        <a href="team.html">团队风采</a>
+        <a href="activities.html">活动纪实</a>
+        <a href="resources.html">科普资源库</a>
+        <a href="join.html">加入我们</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ================= 页面标题横幅 ================= -->
+  <section class="page-hero">
+    <h1>项目概况</h1>
+    <p class="crumb"><a href="index.html">首页</a> / 项目概况</p>
+    <p style="margin-top:16px; max-width:700px; margin-left:auto; margin-right:auto; color:rgba(255,255,255,.85);">
+      <strong>红翼守护·将军故里</strong> —— 民航普惠应急科普公益行动<br />
+      红色精神为魂、航空技能为器，聚焦革命老区"一老一小"
+    </p>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <!-- 快速跳转标签 -->
+      <div class="chipbar">
+        <a class="chip" href="#background">项目背景</a>
+        <a class="chip" href="#policy">政策支持</a>
+        <a class="chip" href="#innovation">核心创新</a>
+        <a class="chip" href="#edge">核心优势</a>
+        <a class="chip" href="#howto">实施路径</a>
+        <a class="chip" href="#value">成果与价值</a>
+        <a class="chip" href="#plan">未来规划</a>
+      </div>
+
+      <!-- ================= 项目摘要 ================= -->
+      <div class="quote-card" style="text-align:left; margin-bottom:46px;">
+        <div class="big-star">★</div>
+        <blockquote style="font-size:1.02rem;">
+          项目立足河南省信阳市新县将军故里，依托信阳农林学院航空服务艺术与管理专业学生的航空级应急技能
+          —— CPR、创伤包扎、紧急疏散、秩序管控等，针对革命老区老年人、留守儿童及社区居民应急自救能力薄弱的痛点，
+          打造"红色精神为魂、航空技能为器"的普惠应急科普公益行动。
+          项目采用 <b>80% 全民通用应急知识 + 20% 航空特色科普</b> 的内容结构，
+          通过社区乡村科普、校园安全课堂、沉浸式实操体验等方式，每年计划开展 <b>20+ 场</b>公益活动，
+          直接培训群众 <b>1000+ 人次</b>。
+        </blockquote>
+        <div class="who">—— 项目摘要</div>
+      </div>
+
+      <!-- ================================================================
+           一、项目背景与痛点
+           ================================================================ -->
+      <div class="album" id="background">
+        <div class="album-head">
+          <span class="album-num">01</span>
+          <h2 class="album-title">项目背景与痛点</h2>
+          <span class="album-meta">为什么做这件事</span>
+        </div>
+
+        <div class="split" style="grid-template-columns:1fr; gap:24px;">
+          <div>
+            <h3>红色沃土，亟需青年传承赋能</h3>
+            <p>
+              新县是全国著名的将军县，位于大别山革命老区核心地带，是鄂豫皖苏区首府所在地，
+              诞生了许世友、李德生、郑维山等 43 位开国将军，留下了"家家有红军、户户有烈士"的英雄史诗。
+              大别山"坚守信念、胸怀全局、团结奋进、勇当前锋"的革命精神，是中华民族宝贵的精神财富。
+            </p>
+            <p>
+              然而当前新县红色传承形式多以展馆参观、观光研学为主，青年实践落地项目较少，
+              红色精神与新时代志愿服务结合度低，缺少接地气、常态化、可落地的青年公益载体。
+              本项目以常态化公益科普为载体，把将军"守护人民、担当奉献"的红色初心，
+              转化为青年志愿者守护群众生命安全的实际行动。
+            </p>
+
+            <h3>基层应急能力，普遍薄弱</h3>
+            <p>
+              新县总人口 37 万，常居人口 27.8 万，其中 60 周岁以上老年人 6.4 万、占总人口 16.9%，
+              常居人口老龄化率达 22.9%。留守老人与儿童自救能力严重不足，
+              摔伤、异物卡喉、突发晕厥、火灾、一氧化碳中毒等意外事件高发。
+            </p>
+            <p>
+              团队于 2026 年 5 月对新县田铺乡许世友将军故里周边社区开展实地走访调研，
+              随机抽样 140 名居民（含老年人、留守妇女、儿童监护人），结果如下：
+            </p>
+          </div>
+        </div>
+
+        <div class="stats" style="margin:6px 0 20px;">
+          <div class="stat">
+            <div class="num">85<small>%</small></div>
+            <div class="label">受访居民从未接受过任何急救培训</div>
+            <div class="src">抽样 140 人</div>
+          </div>
+          <div class="stat">
+            <div class="num">92<small>%</small></div>
+            <div class="label">不了解海姆立克急救法的正确操作</div>
+            <div class="src">入户访谈 9 户</div>
+          </div>
+          <div class="stat">
+            <div class="num">78<small>%</small></div>
+            <div class="label">面对突然晕倒者第一反应是"立刻扶起来"</div>
+            <div class="src">属错误做法，可能加重伤情</div>
+          </div>
+          <div class="stat blue">
+            <div class="num">22.9<small>%</small></div>
+            <div class="label">新县常居人口老龄化率</div>
+            <div class="src">60 岁以上 6.4 万人</div>
+          </div>
+        </div>
+
+        <p class="muted-note" style="margin-bottom:18px;">
+          数据来源：2026 年 5 月新县田铺乡许世友将军故里周边社区走访调研（随机抽样 140 名居民 + 入户访谈 9 户）。
+          此外，2024 年新县发生的儿童溺亡、高速交通事故等案例，也暴露出基层群众应急避险与自救互救能力的明显缺失。
+        </p>
+
+        <h3 style="color:var(--red); margin:22px 0 10px; font-family:var(--serif);">专业落地场景单一，存在缺口</h3>
+        <p style="color:var(--muted);">
+          航空服务艺术与管理专业核心课程包含心肺复苏（CPR）、创伤包扎、火情处置、氧气使用、紧急撤离、突发险情处置等
+          标准化应急技能，规范性和实用性极强。但传统认知把这些技能局限于飞机客舱场景，
+          农村群众认为"用不上"，导致专业资源浪费。
+        </p>
+        <p style="color:var(--muted);">
+          本项目提出"<b>去航空场景化、留专业标准化</b>"的转化思路，把航空严苛标准下的应急技能全面转化为
+          全民通用的生活应急技能，既发挥航空专业的独特优势（秩序管控、规范操作、亲和宣讲），
+          又彻底解决"农村群众用不上"的核心顾虑。
+        </p>
+      </div>
+
+      <!-- ================================================================
+           二、政策支持
+           ================================================================ -->
+      <div class="album" id="policy" style="margin-top:60px;">
+        <div class="album-head">
+          <span class="album-num">02</span>
+          <h2 class="album-title">政策支持与时代背景</h2>
+          <span class="album-meta">国家 · 省级 · 市县级</span>
+        </div>
+        <p class="album-desc">
+          项目在红色基因传承、基层应急能力提升、青年实践育人三个维度上，均与国家及地方政策高度同频。
+        </p>
+
+        <div class="cards">
+          <div class="card">
+            <div class="icon">🇨🇳</div>
+            <h3>国家层面</h3>
+            <p>
+              应急管理部持续推进应急科普"五进"（进社区、进学校、进企业、进农村、进家庭），
+              要求"贴近群众、通俗易懂"开展常态化安全宣传；中共中央、国务院《关于推进防灾减灾救灾体制机制改革的意见》
+              强调提升基层防灾减灾能力；教育部《教育强国建设规划纲要（2024—2035 年）》
+              明确推动社会实践与专业教育融合。本项目正是响应这一号召，让航空服务专业的同学走出课堂、
+              在将军故里的志愿服务一线培养综合能力。
+            </p>
+          </div>
+          <div class="card">
+            <div class="icon">🏛️</div>
+            <h3>省级层面</h3>
+            <p>
+              河南省委办公厅、省政府办公厅联合印发《关于进一步提升基层应急管理能力的实施意见》，
+              要求推动应急普法和安全、消防、防灾减灾知识"进企业、进农村、进社区、进学校、进家庭"；
+              2025 年河南省防灾减灾日活动以"人人讲安全、个个会应急"为主题，
+              倡议每位公民至少掌握一项应急技能；河南省教育厅持续强化"1530"安全教育模式。
+            </p>
+          </div>
+          <div class="card">
+            <div class="icon">📍</div>
+            <h3>市县级层面</h3>
+            <p>
+              信阳市"十五五"文旅发展规划明确提出做强以"大别红营"为代表的红色研学品牌，
+              推动红色旅游从观光型向体验型转型；新县作为全国红色旅游融合发展试点县，
+              大力推动红色资源活化利用，支持大学生公益项目进社区、进乡村。
+              新县应急管理局、教育局、团县委等相关单位均表示支持青年志愿服务力量参与基层应急科普。
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================================================================
+           三、核心创新
+           ================================================================ -->
+      <div class="album" id="innovation" style="margin-top:60px;">
+        <div class="album-head">
+          <span class="album-num">03</span>
+          <h2 class="album-title">项目核心创新</h2>
+          <span class="album-meta">六大创新点</span>
+        </div>
+        <p class="album-desc">从内容、形式到机制，形成"红旅 + 应急科普"的独特辨识度。</p>
+
+        <div class="cards">
+          <div class="card">
+            <div class="icon">🚩</div>
+            <h3>一、红旅与专业深度绑定</h3>
+            <p>
+              <b>红色精神为魂：</b>每场科普以许世友将军战场自救、刘名榜救治伤员等真实红色故事开篇，
+              把革命精神与应急技能自然衔接。<b>航空技能为器：</b>用航空服务专业的 CPR、规范包扎、
+              紧急撤离、秩序管控等高标技能，打造"红色基因 + 专业能力"的辨识度。
+            </p>
+          </div>
+          <div class="card">
+            <div class="icon">📊</div>
+            <h3>二、科普内容分层适配</h3>
+            <p>
+              <b>80% 普惠核心：</b>心肺复苏、海姆立克、创伤包扎、居家火灾、燃气避险、中暑晕倒急救、人群疏散等高频刚需；
+              <b>20% 航空特色：</b>航空级规范包扎、密闭空间缺氧自救、紧急撤离礼仪与秩序管控，
+              用民航严苛标准提升基层应急科普的专业性。
+            </p>
+          </div>
+          <div class="card">
+            <div class="icon">🔄</div>
+            <h3>三、闭环服务模式</h3>
+            <p>
+              宣讲实操（手把手教学）→ 问卷调研（培训前后双测）→ 复盘优化（月度汇总数据、动态调整课程）
+              → 二次普及（针对薄弱点回访补训），形成"学习—测评—改进—巩固"完整闭环，
+              杜绝"一次性走过场"。
+            </p>
+          </div>
+          <div class="card">
+            <div class="icon">💡</div>
+            <h3>四、红色 IP + 航空标准 + 数字赋能</h3>
+            <p>
+              <b>课程包标准化：</b>"红翼急救小课堂"轻量化套装（教案、PPT、实操视频、图文手册、考核题库），
+              一次开发、多场复用、异地可复制；<b>线上线下联动：</b>短视频、直播、图解海报同步推送；
+              <b>数字档案留存：</b>活动影像、数据、反馈统一归档。
+            </p>
+          </div>
+          <div class="card">
+            <div class="icon">🤝</div>
+            <h3>五、校地共建长效机制</h3>
+            <p>
+              与新县田铺乡社区、中小学签订长期共建协议，挂牌"红翼应急科普服务站"；
+              固定每月 2 场活动，从"短期活动"升级为长期驻点服务；
+              高校输出专业人才与技术、政府提供场地与政策、社区负责组织动员，三方协同、稳定可持续。
+            </p>
+          </div>
+          <div class="card">
+            <div class="icon">📘</div>
+            <h3>六、可复制标准化体系</h3>
+            <p>
+              编制《红色航空应急科普操作全手册》，含流程、脚本、安全规范、考核标准、宣传模板；
+              以固定 SOP 执行（签到→红色导入→授课→实操→测评→宣传），保证质量稳定；
+              成熟后向罗山何家冲、光山、商城等红色老区推广。
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================================================================
+           四、核心优势：为什么能做好本项目
+           ================================================================ -->
+      <div class="album" id="edge" style="margin-top:60px;">
+        <div class="album-head">
+          <span class="album-num">04</span>
+          <h2 class="album-title">核心优势 · 为什么能做好</h2>
+          <span class="album-meta">专业内核 · 行业资源 · 模式差异化</span>
+        </div>
+        <p class="album-desc">
+          本项目并非普通大学生公益实践，而是依托航空服务艺术与管理专业优势、航司行业资源与综合能力体系，
+          形成区别于普通志愿服务团队的差异化壁垒。
+        </p>
+
+        <!-- 一、专业内核优势 -->
+        <div class="sub-head">一、专业内核优势：航空专业的能力适配</div>
+        <p class="muted-note" style="margin-bottom:14px;">
+          航空服务艺术与管理专业的人才培养，不止是礼仪形象，更是一套「生命应急处置 + 秩序管控 + 公众沟通传播」的完整能力体系，
+          高度匹配乡村应急科普的真实需求。
+        </p>
+        <div class="cards">
+          <div class="card">
+            <div class="icon">🛡️</div>
+            <h3>标准化应急处置能力</h3>
+            <p>
+              民航拥有全球低容错的急救培训体系。本专业学生系统学习机上 CPR、海姆立克梗阻处置、创伤包扎止血、
+              急症识别与客舱撤离疏散等全套应急科目；部分学生考取红十字救护员证书，接受过航司级情景模拟演练。
+            </p>
+            <div class="vs">✨ 区别普通团队：很多下乡科普志愿者仅靠短期网上自学；我们的操作标准源自民航安全规范，动作流程严谨、内容科学，避免传递民间错误急救误区。</div>
+          </div>
+          <div class="card">
+            <div class="icon">🗣️</div>
+            <h3>人群沟通与科普宣讲能力</h3>
+            <p>
+              专业核心课程涵盖服务沟通、公共演讲、服务心理学与不同人群服务策略。面对乡村老人、儿童与普通村民，
+              懂得观察受众接受度、调整语速语气，擅长把专业复杂知识通俗化表达。
+            </p>
+            <div class="vs">✨ 区别普通团队：很多宣讲者容易照本宣科、堆砌专业术语；我们天然懂得换位思考，用方言辅助、慢节奏讲解，让应急知识听得懂、愿意听。</div>
+          </div>
+          <div class="card">
+            <div class="icon">👥</div>
+            <h3>现场秩序管控与情绪安抚</h3>
+            <p>
+              民航训练重点包含突发场景人群疏导、围观群众情绪安抚与现场秩序维护。乡村科普现场围观群众多、场面嘈杂，
+              我们掌握人群分流与控场技巧；如遇真实突发意外，既会施救，也懂得疏散围观、安抚家属情绪。
+            </p>
+            <div class="vs">✨ 独有优势：别的团队大多只教「怎么救人」，我们同时兼顾「施救 + 控场 + 情绪疏导」，贴合乡村集市、广场等公开场景。</div>
+          </div>
+        </div>
+
+        <!-- 二、独家行业资源壁垒 -->
+        <div class="sub-head" style="margin-top:34px;">二、独家行业资源壁垒：五家航司全程把关</div>
+        <p class="muted-note" style="margin-bottom:14px;">
+          项目联动深圳航空、春秋航空、海南航空、山东航空、成都航空多家航司专家作为指导力量，形成完整技术支撑链条，
+          这是绝大多数学生公益团队无法获取的资源。
+        </p>
+        <div class="cards">
+          <div class="card">
+            <div class="icon">✈️</div>
+            <h3>去场景化课程改造</h3>
+            <p>航司急救教员把客舱急救体系「去场景化」，转化为适配乡村老百姓的简化课程，并审核教案与操作演示视频，保证科普内容权威科学。</p>
+          </div>
+          <div class="card">
+            <div class="icon">🎯</div>
+            <h3>专项集训与教员资质</h3>
+            <p>航司专家为志愿者开展专项集训与模拟实景演练，指导学生获取急救辅助教员资质——学生不只「学会急救」，更学会「教别人急救」。</p>
+          </div>
+          <div class="card">
+            <div class="icon">📢</div>
+            <h3>品牌与资源对接</h3>
+            <p>航司品牌部、CSR 社会责任部门指导宣传物料、短视频与科普手册制作，并协助对接公益赞助和校地长期合作渠道。</p>
+          </div>
+          <div class="card">
+            <div class="icon">🧒</div>
+            <h3>分层课程设计</h3>
+            <p>借鉴航司乘务礼仪与「儿童飞行营」经验，设计老人版、中小学生版分层科普课程，配套安全小剧场与角色扮演互动。</p>
+          </div>
+        </div>
+        <div class="vs" style="margin-top:18px;">
+          ✨ 对比其他团队：多数公益团队只能依赖校内老师；我们直接拥有一线民航行业专家全程把关，课程质量与实操标准有行业背书。
+        </div>
+
+        <!-- 三、项目模式差异化 -->
+        <div class="sub-head" style="margin-top:34px;">三、项目模式差异化：「红魂 + 蓝技」双融合</div>
+        <p class="muted-note" style="margin-bottom:14px;">
+          市面上同类乡村应急科普项目大多只有单纯急救教学、内容同质化严重；我们依托航空专业，
+          把航空安全文化理念与大别山红色故事深度融合，跳出「单纯急救科普」的内卷。
+        </p>
+        <div class="cards">
+          <div class="card">
+            <div class="icon">🚩</div>
+            <h3>红魂：红色故事作导入</h3>
+            <p>
+              把民航「预防第一、严谨有序」的安全理念，与许世友将军等将军故里的红色自救故事结合：
+              红色故事作课程导入，急救技能作落地实践，让红色传承不只是参观展馆，而是守护乡亲生命的实际行动。
+            </p>
+          </div>
+          <div class="card">
+            <div class="icon">💙</div>
+            <h3>蓝技：急救技能作落地</h3>
+            <p>
+              课程分层设计：老年群体侧重慢动作演示与口诀记忆，中小学生侧重情景剧场与游戏互动，
+              真正做到因材施教、学了能用。
+            </p>
+          </div>
+        </div>
+
+        <div class="notice" style="margin-top:26px;">
+          <b>我们不是纸上谈兵：</b>团队多名成员已取得红十字会初级救护员证，并已在新县将军故里多地完成实地调研、预宣讲与问卷采集，
+          开展多场小规模科普试点；同时依托航司 CSR 资源与高校社会实践平台，优先复用模拟人、绷带等可循环教具，
+          单场成本低、无需额外聘请外部人员，落地可行。
+        </div>
+
+        <!--<div class="quote-card" style="margin-top:26px; text-align:left;">
+          <div class="big-star">★</div>
+          <blockquote style="font-size:1.02rem;">
+           其他团队可以照搬急救知识点，但很难复制我们航空专业学生「标准化急救能力 + 公众沟通控场能力 + 航司行业资源 + 红色老区深度调研实践」的整套优势。
+            航空服务艺术与管理专业，不只是服务客舱，同样可以扎根乡土，把民航守护生命的专业力量带到将军故里的田间。
+          </blockquote>
+          <div class="who">—— 项目核心优势 · 总结金句</div>
+        </div>-->
+      </div>
+
+      <!-- ================================================================
+           五、实施路径：六步法 SOP
+           ================================================================ -->
+      <div class="album" id="howto" style="margin-top:60px;">
+        <div class="album-head">
+          <span class="album-num">05</span>
+          <h2 class="album-title">实施路径：六步法标准流程</h2>
+          <span class="album-meta">每场活动统一执行</span>
+        </div>
+        <p class="album-desc">从签到到二次传播，六步固定流程，保证每一场活动的质量一致、可复制。</p>
+
+        <div class="step-grid">
+          <div class="step">
+            <span class="step-num">1</span>
+            <h4>签到预热（10 分钟）</h4>
+            <p>组织人员签到，发放知识前测问卷及口哨、贴纸等小礼品。</p>
+          </div>
+          <div class="step">
+            <span class="step-num">2</span>
+            <h4>红色精神导入（5—8 分钟）</h4>
+            <p>讲述大别山红色救护故事（如许世友将军战场自救），融合红色教育与应急科普。</p>
+          </div>
+          <div class="step">
+            <span class="step-num">3</span>
+            <h4>技能分站教学（40—60 分钟）</h4>
+            <p>设置 2—3 个实操站点，以 15 人小组形式轮流学习急救技能。</p>
+          </div>
+          <div class="step">
+            <span class="step-num">4</span>
+            <h4>模拟演练纠错（20 分钟）</h4>
+            <p>还原老人晕倒、儿童卡喉等实景，组织全员实操，志愿者现场纠正动作。</p>
+          </div>
+          <div class="step">
+            <span class="step-num">5</span>
+            <h4>测评收集反馈（10 分钟）</h4>
+            <p>开展课后问卷测评，对比学习效果，收集优化建议。</p>
+          </div>
+          <div class="step">
+            <span class="step-num">6</span>
+            <h4>合影二次传播（5 分钟）</h4>
+            <p>集体合影留存素材，发放急救口诀卡片，同步开展线上宣传。</p>
+          </div>
+        </div>
+
+        <div class="sub-head blue" style="margin-top:34px;">四步教学法与分层教学</div>
+        <div class="cards">
+          <div class="card">
+            <div class="icon">📝</div>
+            <h3>讲解—示范—练习—考核</h3>
+            <p>
+              严格采用四步教学法，强调"只教保命三招"，严禁超范围教学，
+              避免群众因"半桶水"而盲目施救。
+            </p>
+          </div>
+          <div class="card">
+            <div class="icon">🗣️</div>
+            <h3>面向老人的"去专业化"改造</h3>
+            <p>
+              拒绝晦涩医学术语，采用"方言宣讲 + 大字口诀 + 慢动作演示"；
+              把 CPR 按压频率转化为当地民歌节拍，把海姆立克编成顺口溜。
+            </p>
+          </div>
+          <div class="card">
+            <div class="icon">🎭</div>
+            <h3>面向孩子的趣味互动</h3>
+            <p>
+              用安全剧场、角色扮演、小游戏互动，把知识变成趣味体验；
+              就地取材，用毛巾、抱枕模拟包扎，降低学习门槛。
+            </p>
+          </div>
+        </div>
+
+        <div class="notice" style="margin-top:26px;">
+          <b>为什么用红色故事开场？</b>调研发现，老区群众对许世友将军等本地英雄人物有深厚感情与天然亲近感，
+          多位老人主动讲述家中长辈跟随红军的故事。受访村民一致认为："用将军战场自救的故事来讲急救知识，
+          这样讲我们爱听，也能记得住。" —— 红色故事是我们的"情感敲门砖"。
+        </div>
+      </div>
+
+      <!-- ================================================================
+           六、可交付成果与社会价值
+           ================================================================ -->
+      <div class="album" id="value" style="margin-top:60px;">
+        <div class="album-head">
+          <span class="album-num">06</span>
+          <h2 class="album-title">可交付成果与社会价值</h2>
+          <span class="album-meta">年度目标</span>
+        </div>
+
+        <div class="stats" style="margin-bottom:26px;">
+          <div class="stat">
+            <div class="num">20<small>+</small></div>
+            <div class="label">场公益科普活动</div>
+            <div class="src">每年度</div>
+          </div>
+          <div class="stat">
+            <div class="num">1000<small>+</small></div>
+            <div class="label">直接培训群众人次</div>
+            <div class="src">每年度</div>
+          </div>
+          <div class="stat">
+            <div class="num">1000<small>册</small></div>
+            <div class="label">发放科普手册</div>
+            <div class="src">图文简明版</div>
+          </div>
+          <div class="stat blue">
+            <div class="num">12<small>条+</small></div>
+            <div class="label">"红翼小课堂"短视频</div>
+            <div class="src">线上线下联动</div>
+          </div>
+        </div>
+
+        <div class="cards">
+          <div class="card">
+            <div class="icon">❤️</div>
+            <h3>社会价值</h3>
+            <p>
+              提升新县将军故里片区居民急救知识知晓率（预估从当前 15% 提升至 60% 以上），
+              降低社区意外事件的错误处置率；以青年志愿力量活化红色基因，
+              增强老区群众的安全感与幸福感。
+            </p>
+          </div>
+          <div class="card">
+            <div class="icon">🎓</div>
+            <h3>教育价值</h3>
+            <p>
+              为航空服务艺术与管理专业学生提供真实的社会实践平台，
+              培养一批懂专业、有情怀的青年志愿服务骨干。
+            </p>
+          </div>
+          <div class="card">
+            <div class="icon">🌱</div>
+            <h3>阶段目标</h3>
+            <p>
+              半年内服务覆盖新县田铺乡及周边 3 个社区（村）、2 所中小学，
+              累计培训群众不少于 500 人次，将辖区居民急救知识知晓率由 15% 提升至 50% 以上。
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================================================================
+           七、未来规划
+           ================================================================ -->
+      <div class="album" id="plan" style="margin-top:60px;">
+        <div class="album-head">
+          <span class="album-num">07</span>
+          <h2 class="album-title">未来发展规划</h2>
+          <span class="album-meta">1 年 · 2—3 年 · 5 年</span>
+        </div>
+
+        <div class="cards">
+          <div class="card">
+            <div class="icon">①</div>
+            <h3>短期（1 年内）：深耕示范，打造样板</h3>
+            <p>
+              完成新县核心区域试点落地，验证并优化标准化服务流程，超额完成年度公益科普场次与培训人次指标，
+              覆盖乡村、校园、敬老院多类群体；与地方单位建立长期共建驻点机制，
+              完成品牌视觉体系搭建，提升项目本地辨识度与初步影响力。
+            </p>
+          </div>
+          <div class="card">
+            <div class="icon">②</div>
+            <h3>中期（2—3 年）：标准输出，区域复制</h3>
+            <p>
+              将成熟模式复制至信阳多个红色老区，搭建本土化志愿者队伍，建立区域志愿联盟，
+              完成团队从"执行端"向"赋能督导端"的转型；丰富沉浸式、进阶化应急科普课程体系，
+              产出专属读本，沉淀调研报告与学术论文。
+            </p>
+          </div>
+          <div class="card">
+            <div class="icon">③</div>
+            <h3>长期（5 年）：网络构建，生态融合</h3>
+            <p>
+              实现鄂豫皖大别山老区多县域覆盖，将应急科普融入红色研学产业与基层应急治理体系，
+              打造可推广的基层治理创新样板；搭建线上数字化科普平台与数据中心，
+              整合高校、政府、企业多方资源，形成可持续的公益发展生态。
+            </p>
+          </div>
+        </div>
+
+        <p class="muted-note" style="margin-top:20px;">
+          <b>保障与迭代：</b>从组织、资金、政策多维度搭建保障体系；
+          以标准化流程管控服务质量，通过定期测评与档案留存持续优化服务内容；
+          依托新媒体常态化传播，持续积累品牌价值。
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= CTA 横幅 ================= -->
+  <section class="cta">
+    <div class="container">
+      <h2>让红色精神，在守护生命中传承</h2>
+      <p>想看我们实际做了什么、教了什么，欢迎继续往下逛。</p>
+      <a class="btn btn-solid" href="activities.html">查看活动纪实 →</a>
+    </div>
+  </section>
+
+  <!-- ================= 页脚 ================= -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h4>信阳农林学院红翼先锋队</h4>
+        <p>红色文化志愿行 · 以志愿之名，行传承之实。</p>
+      </div>
+      <div>
+        <h4>快速导航</h4>
+        <p><a href="index.html">首页</a></p>
+        <p><a href="about.html">项目概况</a></p>
+        <p><a href="team.html">团队风采</a></p>
+        <p><a href="activities.html">活动纪实</a></p>
+        <p><a href="resources.html">科普资源库</a></p>
+        <p><a href="join.html">加入我们</a></p>
+      </div>
+      <div>
+        <h4>联系我们</h4>
+        <p>联系人：彭思雨</p>
+        <p><a href="mailto:602519769@qq.com?subject=%E5%92%A8%E8%AF%A2%E4%BF%A1%E9%98%B3%E5%86%9C%E6%9E%97%E5%AD%A6%E9%99%A2%E7%BA%A2%E7%BF%BC%E5%85%88%E9%94%8B%E9%98%9F">邮箱：602519769@qq.com</a></p>
+        <!--<p>微信公众号：【公众号名称】</p>-->
+      </div>
+    </div>
+    <div class="copy">© <span id="year"></span> 信阳农林学院红翼先锋队 · 追寻红色足迹，传承革命薪火</div>
+  </footer>
+
+  <button class="to-top" id="to-top" type="button" aria-label="返回顶部">↑</button>
+  <script src="js/main.js"></script>
+</body>
+</html>

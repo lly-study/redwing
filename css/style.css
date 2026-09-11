@@ -1,0 +1,728 @@
+/* ============================================================
+   红色文化志愿行 · 展示站样式
+   主题色：中国红 + 金色 + 米白，改动配色只需改下面的 :root
+   ============================================================ */
+
+:root {
+  --red:       #C91F1B;   /* 主红 */
+  --red-deep:  #9C1713;   /* 深红（渐变/页脚） */
+  --red-dark:  #660F0D;   /* 更深红 */
+  --gold:      #C3A168;   /* 金色 */
+  --gold-deep: #8F6B24;   /* 深金（文字用，保证对比度） */
+  --blue:      #074181;   /* 民航蓝 · 辅色：呼应「蓝技为翼」 */
+  --blue-deep: #063467;   /* 深蓝（文字用） */
+  --blue-soft: #EBF1F7;   /* 浅蓝底（图标底、提示条） */
+  --navy:      #003366;   /* 航空藏蓝 · 航空特色专栏点缀 */
+  --navy-deep: #002244;   /* 更深藏蓝（渐变端） */
+  --cream:     #FBF6EE;   /* 米白背景 */
+  --paper:     #FFFFFF;
+  --ink:       #3A3129;   /* 正文深棕 */
+  --muted:     #7A7266;   /* 次要文字 */
+  --line:      rgba(195, 161, 104, .38);
+  --shadow:    0 4px 18px rgba(60, 20, 15, .08);
+  --serif: Georgia, "Times New Roman", "Noto Serif SC", "Source Han Serif SC",
+           "Songti SC", SimSun, serif;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+          "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  color: var(--ink);
+  background: var(--cream);
+  line-height: 1.75;
+  font-size: 16px;
+}
+
+body.lock { overflow: hidden; }
+
+img { max-width: 100%; display: block; }
+
+h1, h2, h3, h4 { font-family: var(--serif); letter-spacing: .04em; }
+
+[id] { scroll-margin-top: 84px; }   /* 锚点跳转时避开吸顶导航 */
+
+.container { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
+
+/* ============ 顶部导航 ============ */
+.site-header {
+  position: sticky; top: 0; z-index: 60;
+  /* 用高不透明度米白代替毛玻璃：视觉几乎一致，但省掉每帧对背后内容重新模糊的开销，
+     滚动与轮播切换时更顺。若要恢复毛玻璃，改回 background: rgba(251,246,238,.94); 再加 backdrop-filter: blur(8px); */
+  background: rgba(251, 246, 238, .97);
+  border-bottom: 1px solid var(--line);
+}
+.header-inner {
+  max-width: 1140px; margin: 0 auto; padding: 0 20px;
+  height: 64px; display: flex; align-items: center; justify-content: space-between;
+}
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+/* 品牌标识：正式队徽 images/brand/brand-logo.png（等高缩放，不裁切） */
+.brand-mark {
+  height: 36px; width: auto; max-width: 48px; flex: none; display: block;
+  object-fit: contain;
+}
+.brand-name { font-family: var(--serif); font-weight: 700; color: var(--red-deep); letter-spacing: .1em; }
+.brand-sub { display: block; font-size: .68rem; color: var(--blue); letter-spacing: .2em; font-family: var(--sans); }
+
+.main-nav { display: flex; align-items: center; gap: 6px; }
+.main-nav a {
+  text-decoration: none; color: var(--ink); font-weight: 600;
+  padding: 8px 14px; border-bottom: 3px solid transparent; transition: color .2s;
+}
+.main-nav a:hover { color: var(--red); }
+.main-nav a.active { color: var(--red); border-bottom-color: var(--red); }
+
+.menu-btn {
+  display: none; width: 40px; height: 40px; border: 1px solid var(--line);
+  background: var(--paper); border-radius: 8px; cursor: pointer;
+  flex-direction: column; align-items: center; justify-content: center; gap: 5px;
+}
+.menu-btn span { width: 20px; height: 2px; background: var(--red-deep); border-radius: 2px; transition: .25s; }
+.menu-btn.on span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.menu-btn.on span:nth-child(2) { opacity: 0; }
+.menu-btn.on span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ============ 首页首屏 Hero ============ */
+.hero {
+  position: relative; color: #FFF; text-align: center;
+  padding: 110px 20px 96px; overflow: hidden;
+  background:
+    radial-gradient(rgba(255, 255, 255, .06) 1px, transparent 1.4px) 0 0 / 22px 22px,
+    linear-gradient(155deg, #5C0B09 0%, #A3150F 55%, #C91F1B 100%);
+}
+.hero h1 { font-size: clamp(2.3rem, 5.3vw, 3.6rem); line-height: 1.35; font-weight: 800; }
+.hero .slogan {
+  margin-top: 16px; font-family: var(--serif);
+  font-size: clamp(1.05rem, 2.4vw, 1.5rem); color: #F0DCB4; letter-spacing: .18em;
+}
+.hero .lead { max-width: 760px; margin: 24px auto 0; font-size: 1.1rem; color: rgba(255, 255, 255, .88); }
+.hero-actions { margin-top: 36px; display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+.btn {
+  display: inline-block; padding: 12px 28px; border-radius: 6px;
+  text-decoration: none; font-weight: 700; letter-spacing: .12em; transition: .25s;
+}
+.btn-solid { background: var(--gold); color: #5A0B08; }
+.btn-solid:hover { background: #D6B073; transform: translateY(-2px); }
+.btn-outline { border: 1.5px solid rgba(255, 255, 255, .75); color: #FFF; }
+.btn-outline:hover { background: rgba(255, 255, 255, .14); }
+.btn-red { background: var(--red); color: #FFF; }
+.btn-red:hover { background: var(--red-deep); transform: translateY(-2px); }
+
+/* ============ 通用区块 ============ */
+.section { padding: 72px 0; }
+.section.alt { background: var(--paper); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+
+.section-head { text-align: center; margin-bottom: 46px; }
+.kicker {
+  display: block; color: var(--gold-deep); letter-spacing: .34em;
+  font-size: .82rem; font-weight: 700;
+}
+.section-title { font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--red-deep); margin-top: 8px; }
+/* 红→蓝渐变：红色基因为根，民航技能为翼 */
+.title-line { width: 64px; height: 3px; margin: 14px auto 0; border-radius: 2px;
+  background: linear-gradient(90deg, var(--red), var(--navy)); }
+.section-sub { color: var(--muted); max-width: 720px; margin: 16px auto 0; text-align: center; }
+
+/* 两栏（关于我们） */
+.split { display: grid; grid-template-columns: 1.1fr .9fr; gap: 46px; align-items: center; }
+.split h3 { color: var(--red); margin: 6px 0 14px; font-size: 1.2rem; }
+.split p + p { margin-top: 12px; }
+.feature-list { list-style: none; margin-top: 18px; }
+.feature-list li { padding: 7px 0; }
+.feature-list li::before { content: "★"; color: var(--gold-deep); margin-right: 10px; }
+
+.quote-card {
+  background: linear-gradient(150deg, #FFF 0%, #F6EFE0 100%);
+  border: 1px solid var(--line); border-radius: 14px;
+  padding: 34px 30px; box-shadow: var(--shadow); text-align: center;
+}
+.quote-card .big-star { color: var(--gold); font-size: 1.6rem; }
+.quote-card blockquote {
+  font-family: var(--serif); font-size: 1.15rem; color: var(--red-deep);
+  margin: 14px 0 10px; line-height: 2;
+}
+.quote-card .who { color: var(--muted); font-size: .9rem; }
+
+/* 卡片（特色亮点 / 联系方式） */
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 22px; }
+.card {
+  background: var(--paper); border: 1px solid var(--line); border-top: 4px solid var(--red);
+  border-radius: 10px; padding: 26px 22px; box-shadow: var(--shadow);
+  transition: transform .25s;
+}
+.card:hover { transform: translateY(-4px); }
+/* 图标底用民航蓝浅色，让「蓝技」在视觉上落地 */
+.card .icon {
+  font-size: 1.5rem; width: 52px; height: 52px; border-radius: 50%;
+  background: var(--blue-soft); color: var(--blue-deep);
+  display: flex; align-items: center; justify-content: center;
+}
+.card h3 { color: var(--red-deep); margin: 10px 0 8px; font-size: 1.15rem; }
+.card p { color: var(--muted); font-size: .95rem; }
+
+/* ============ 相册网格 ============ */
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(235px, 1fr)); gap: 14px; }
+.gallery-grid figure {
+  margin: 0; background: var(--paper); border-radius: 10px; overflow: hidden;
+  box-shadow: var(--shadow); cursor: zoom-in; border: 1px solid var(--line);
+}
+.gallery-grid figure img { width: 100%; height: 200px; object-fit: cover; transition: transform .45s; }
+.gallery-grid figure:hover img { transform: scale(1.06); }
+.gallery-grid figcaption { padding: 9px 12px; font-size: .86rem; color: var(--ink); }
+
+/* 图片缺失时的占位块（由页面内小脚本自动生成） */
+.ph {
+  width: 100%; height: 200px; display: flex; align-items: center; justify-content: center;
+  text-align: center; padding: 0 16px; background: #EFE9DC; color: #95896F;
+  font-size: .86rem; line-height: 1.6;
+}
+
+/* ============ 活动相册分组 ============ */
+.album { margin-bottom: 56px; }
+.album-head { display: flex; align-items: center; gap: 14px; margin-bottom: 8px; }
+.album-num {
+  width: 36px; height: 36px; flex: none; border-radius: 50%;
+  background: linear-gradient(135deg, var(--red), var(--red-deep));
+  color: #FFF; font-family: var(--serif); font-weight: 700;
+  display: inline-flex; align-items: center; justify-content: center;
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, .35);
+}
+.album-title { font-size: 1.35rem; color: var(--ink); }
+.album-meta { color: var(--muted); font-size: .88rem; margin-left: auto; white-space: nowrap; }
+.album-desc { color: var(--muted); font-size: .95rem; margin: 0 0 18px 50px; }
+.album-desc .edit-note { color: var(--gold-deep); }
+
+/* 航空特色专栏：藏蓝点缀（仅作用于科普资源库的「航空特色专栏」，呼应 20% 航空特色内容） */
+#aviation .album-num { background: linear-gradient(135deg, var(--navy), var(--navy-deep)); }
+#aviation .album-title { color: var(--navy); }
+#aviation .sub-head.blue { color: var(--navy); }
+#aviation .step { border-left-color: var(--navy); }
+#aviation .step-num { background: var(--navy); }
+
+/* 锚点小标签（页面顶部快速跳转） */
+.chipbar { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 44px; }
+.chip {
+  text-decoration: none; color: var(--red-deep); border: 1px solid var(--red);
+  border-radius: 999px; padding: 6px 18px; font-size: .92rem; transition: .2s;
+}
+.chip:hover { background: var(--red); color: #FFF; }
+
+/* ============ 视频区 ============ */
+.video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 26px; }
+.video-box { background: var(--paper); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+.video-box video { width: 100%; aspect-ratio: 16 / 9; background: #000; display: block; }
+.video-cap { padding: 14px 18px; }
+.video-cap h3 { color: var(--red-deep); font-size: 1.05rem; }
+.video-cap p { color: var(--muted); font-size: .92rem; margin-top: 6px; }
+.video-tip {
+  background: #F7EFE0; color: var(--gold-deep); font-size: .88rem;
+  padding: 10px 16px; border-top: 1px dashed var(--line);
+}
+
+/* ============ CTA 横幅 ============ */
+.cta {
+  background: linear-gradient(120deg, var(--red-deep), var(--red));
+  color: #FFF; text-align: center; padding: 60px 20px;
+}
+.cta h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); }
+.cta p { color: rgba(255, 255, 255, .85); margin: 12px auto 26px; max-width: 640px; }
+
+/* ============ 内页小标题横幅（活动纪实/加入我们共用） ============ */
+.page-hero {
+  color: #FFF; text-align: center; padding: 64px 20px 52px;
+  border-bottom: 4px solid var(--navy);
+  background: radial-gradient(rgba(255, 255, 255, .06) 1px, transparent 1.4px) 0 0 / 22px 22px,
+    linear-gradient(155deg, #5C0B09 0%, #A3150F 60%, #C91F1B 100%);
+}
+.page-hero h1 { font-size: clamp(2rem, 4.3vw, 2.95rem); font-weight: 800; }
+.page-hero p:not(.crumb) { font-size: 1.08rem; }
+.crumb { margin-top: 12px; font-size: .95rem; color: rgba(255, 255, 255, .8); }
+.crumb a { color: #F0DCB4; text-decoration: none; }
+
+/* ============ 联系我们 / 招募信息 ============ */
+.contact-card { text-align: center; }
+.contact-card .icon { font-size: 1.7rem; }
+.contact-card h3 { font-size: 1.08rem; }
+.contact-card p { font-size: .95rem; }
+.contact-card a { color: var(--red); text-decoration: none; word-break: break-all; }
+.contact-card a:hover { text-decoration: underline; }
+
+.notice {
+  background: var(--blue-soft); border-left: 4px solid var(--blue);
+  border-radius: 6px; padding: 14px 18px; margin: 26px auto 0; max-width: 760px;
+  color: var(--ink); font-size: .95rem;
+}
+.notice b { color: var(--red-deep); }
+
+/* ============ 页脚 ============ */
+.site-footer { background: var(--red-dark); color: rgba(255, 255, 255, .78); padding: 44px 0 0; margin-top: 16px; border-top: 4px solid var(--navy); }
+.footer-inner { max-width: 1140px; margin: 0 auto; padding: 0 20px;
+  display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 30px; }
+.footer-inner h4 { color: var(--gold); font-size: 1rem; margin-bottom: 12px; letter-spacing: .12em; }
+.footer-inner p, .footer-inner a { color: rgba(255, 255, 255, .78); font-size: .93rem; text-decoration: none; line-height: 2; }
+.footer-inner a:hover { color: #FFF; text-decoration: underline; }
+.footer-brand .brand-name { color: #FFF; }
+.copy {
+  max-width: 1140px; margin: 0 auto; padding: 18px 20px;
+  border-top: 1px solid rgba(255, 255, 255, .14); text-align: center;
+  font-size: .85rem; color: rgba(255, 255, 255, .55); margin-top: 30px;
+}
+
+/* ============ 大图查看 Lightbox ============ */
+.lightbox {
+  position: fixed; inset: 0; z-index: 100; display: none;
+  background: rgba(18, 6, 8, .94);
+  align-items: center; justify-content: center; flex-direction: column; padding: 30px;
+}
+.lightbox.open { display: flex; }
+.lb-stage { max-width: min(92vw, 1100px); }
+.lb-stage img, .lb-stage video { max-width: 100%; max-height: 76vh; border-radius: 6px; box-shadow: 0 10px 40px rgba(0, 0, 0, .5); }
+.lb-cap { color: #E9E2D2; text-align: center; margin-top: 14px; font-size: .95rem; }
+.lb-nav, .lb-close {
+  position: fixed; background: rgba(255, 255, 255, .12); color: #FFF;
+  border: 1px solid rgba(255, 255, 255, .35); border-radius: 50%;
+  width: 46px; height: 46px; font-size: 1.6rem; line-height: 1;
+  cursor: pointer; transition: .2s;
+}
+.lb-nav:hover, .lb-close:hover { background: var(--red); border-color: var(--red); }
+.lb-close { top: 22px; right: 22px; }
+.lb-prev { left: 22px; top: 50%; transform: translateY(-50%); }
+.lb-next { right: 22px; top: 50%; transform: translateY(-50%); }
+
+/* ============ 返回顶部 ============ */
+.to-top {
+  position: fixed; right: 22px; bottom: 26px; z-index: 70;
+  width: 44px; height: 44px; border-radius: 50%; border: none; cursor: pointer;
+  background: var(--red); color: #FFF; font-size: 1.1rem; display: none;
+  box-shadow: 0 6px 18px rgba(156, 23, 19, .4);
+}
+.to-top.show { display: block; }
+.to-top:hover { background: var(--red-deep); }
+
+/* ============ 左侧模块导航（桌面宽屏悬浮 · 灵动红星点） ============
+   只在宽屏显示：1140px 内容区两侧留白足够放得下标签时才出现。
+   位置贴着内容区左边缘（距内容 96px 之外），随视口变宽而外扩，避免挤压正文。 */
+.rail {
+  position: fixed;
+  left: max(24px, calc(50vw - 570px - 120px));   /* 570px = 内容区 1140px 的一半 */
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 55;
+  display: none;
+  flex-direction: column;
+  gap: 26px;
+  --rail-y: 0px;    /* 红星标记沿轨道下移的距离（JS 写入） */
+  --rail-on: 0;     /* 标记显隐（进入首个模块后置 1） */
+}
+.rail.on { --rail-on: 1; }
+
+/* 竖向轨道：贯穿所有圆点的那条细线 */
+.rail-track {
+  position: absolute;
+  left: 7px;                       /* 与圆点中心（16px 圆点中心在 8px）对齐：线宽 2px → 左 7px */
+  top: 8px; bottom: 8px;
+  width: 2px;
+  background: linear-gradient(var(--gold), rgba(195, 161, 104, .12));
+  border-radius: 2px;
+}
+
+/* 会滑动的红星标记（五角星 · 金边红底，呼应队徽盾牌上方的金色五角星） */
+.rail-marker {
+  position: absolute;
+  left: 8px; top: 8px;             /* 与首个圆点中心对齐，垂直位置由 --rail-y 平移 */
+  transform: translate(-50%, -50%) translateY(var(--rail-y));
+  transition: transform .6s cubic-bezier(.34, 1.56, .64, 1), opacity .35s ease;
+  opacity: var(--rail-on);
+  will-change: transform;
+}
+.rail-marker svg {
+  display: block;
+  width: 28px; height: 28px;
+  overflow: visible;               /* 让光晕不被 SVG 边界裁掉 */
+  filter: drop-shadow(0 2px 6px rgba(156, 23, 19, .55));
+  animation: rail-breathe 2.6s ease-in-out infinite;   /* 呼吸光晕，呼应首页轮播 */
+}
+.rail-star {
+  fill: var(--red);
+  stroke: var(--gold);
+  stroke-width: 1.2;
+  stroke-linejoin: round;
+}
+
+/* 每个模块：圆点 + 常显名称 */
+.rail-item {
+  position: relative;
+  display: flex; align-items: center; gap: 12px;
+  text-decoration: none;
+  color: var(--muted);
+  font-size: .95rem;
+  letter-spacing: .05em;
+  white-space: nowrap;
+  transition: color .25s;
+}
+.rail-dot {
+  width: 16px; height: 16px; flex: none;
+  border-radius: 50%;
+  border: 2px solid var(--gold);
+  background: var(--cream);
+  transition: border-color .25s, background .25s;
+}
+.rail-item:hover { color: var(--ink); }
+.rail-item:hover .rail-dot { border-color: var(--red); }
+.rail-item.on { color: var(--red-deep); font-weight: 700; }
+.rail-item.on .rail-dot { border-color: var(--red); background: var(--red); }
+
+@keyframes rail-breathe {
+  0%, 100% { transform: scale(1);    filter: drop-shadow(0 0 4px rgba(201, 31, 27, .55)); }
+  50%      { transform: scale(1.14); filter: drop-shadow(0 0 12px rgba(201, 31, 27, .8)); }
+}
+
+/* 只在足够宽的屏幕上显示（标签常显需留白） */
+@media (min-width: 1400px) {
+  .rail { display: flex; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rail-marker { transition: none; }
+  .rail-marker svg { animation: none; }
+}
+
+/* ============ 响应式 ============ */
+@media (max-width: 900px) {
+  .split { grid-template-columns: 1fr; gap: 30px; }
+  .footer-inner { grid-template-columns: 1fr; gap: 22px; }
+  .album-meta { display: none; }
+  .album-desc { margin-left: 0; }
+}
+@media (max-width: 820px) {
+  .menu-btn { display: flex; }
+  .main-nav {
+    position: absolute; top: 100%; left: 0; right: 0;
+    background: var(--cream); border-bottom: 1px solid var(--line);
+    box-shadow: 0 14px 26px rgba(60, 20, 15, .1);
+    display: none; flex-direction: column; align-items: stretch; padding: 8px 0 12px;
+  }
+  .main-nav.open { display: flex; }
+  .main-nav a { padding: 12px 22px; border-bottom: none; border-left: 3px solid transparent; }
+  .main-nav a:hover, .main-nav a.active { border-bottom: none; border-left-color: var(--red); }
+  .hero { padding: 84px 20px 72px; }
+}
+@media (max-width: 520px) {
+  .gallery-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
+  .gallery-grid figure img, .gallery-grid .ph { height: 140px; }
+  .lb-prev { left: 8px; } .lb-next { right: 8px; }
+}
+
+/* ============================================================
+   以下为「首页首屏照片轮播」与「滚动浮现动画」样式
+   ============================================================ */
+
+/* ---------- 首页首屏轮播 ---------- */
+.hero {
+  display: flex; align-items: center; justify-content: center;
+  min-height: min(86vh, 700px);
+  padding: 120px 20px 104px;
+  text-align: center;
+}
+.hero .slides, .hero .slide { position: absolute; inset: 0; }
+/* 交叉淡入只做 opacity；"呼吸感"缩放交给内层 .slide-img（见下方），
+   这样每帧只合成图片自身图层，不会重绘整块首屏。 */
+.hero .slide { opacity: 0; transition: opacity .9s ease; }
+.hero .slide.is-active { opacity: 1; }
+
+/* 内层图片：负责铺满与缓慢缩放 */
+.hero .slide-img {
+  display: block; width: 100%; height: 100%; object-fit: cover;
+  transform: scale(1); transform-origin: center center;
+  backface-visibility: hidden;
+}
+/* ★ 只给"当前活动"的那一张开 will-change 与动画：
+   6 张巨图若同时开 will-change，会各自占用显存并逐帧栅格化，就是之前卡顿的根因。 */
+.hero .slide.is-active .slide-img {
+  will-change: transform;
+  animation: hero-ken-in 7s ease-out forwards;
+}
+.hero .slide.is-active.zoom-out .slide-img { animation-name: hero-ken-out; }
+/* 缩放幅度 1.04：位移更小，栅格化开销更低，观感依然有"呼吸" */
+@keyframes hero-ken-in  { from { transform: scale(1);    } to { transform: scale(1.04); } }
+@keyframes hero-ken-out { from { transform: scale(1.04); } to { transform: scale(1);    } }
+
+/* 手机 / 窄屏：关掉"呼吸感"缩放，只保留交叉淡入（小屏性能余量更小） */
+@media (max-width: 820px) {
+  .hero .slide.is-active .slide-img,
+  .hero .slide.is-active.zoom-out .slide-img {
+    animation: none;
+    transform: none;
+    will-change: auto;
+  }
+}
+/* 深红色半透明遮罩：保证照片上文字清晰，并保持红金主题 */
+.hero-scrim {
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(180deg,
+    rgba(30, 5, 4, .62) 0%,
+    rgba(30, 5, 4, .40) 45%,
+    rgba(156, 23, 19, .80) 100%);
+}
+.hero > .container { position: relative; z-index: 2; }
+
+.hero-btn {
+  position: absolute; top: 50%; transform: translateY(-50%); z-index: 3;
+  width: 46px; height: 46px; border-radius: 50%; cursor: pointer;
+  /* 不用 backdrop-filter：箭头压在轮播图上，切换时会让浏览器每帧重算模糊 */
+  background: rgba(45, 8, 6, .34); color: #FFF;
+  border: 1px solid rgba(255, 255, 255, .5);
+  font-size: 1.6rem; line-height: 1; transition: background .2s, color .2s;
+}
+.hero-btn:hover { background: var(--gold); color: #5A0B08; }
+.hero-btn.prev { left: 18px; }
+.hero-btn.next { right: 18px; }
+
+.hero-dots {
+  position: absolute; left: 0; right: 0; bottom: 22px; z-index: 3;
+  display: flex; gap: 10px; justify-content: center;
+}
+.hero-dots button {
+  width: 10px; height: 10px; padding: 0; border: none; border-radius: 999px;
+  background: rgba(255, 255, 255, .45); cursor: pointer; transition: .3s;
+}
+.hero-dots button.on { background: var(--gold); width: 26px; }
+
+/* ---------- 滚动浮现动画 ----------
+   规则：js/main.js 会给要浮现的元素加上 .reveal；
+   html 根节点有 .js 时才隐藏，JS 失效时内容照常显示，不会白屏。 */
+.reveal { transition: opacity .9s ease, transform .9s ease; }
+html.js .reveal { opacity: 0; transform: translateY(38px); }
+html.js .reveal.in { opacity: 1; transform: translateY(0); }
+
+/* 网格内的错峰延迟：照片/卡片一张接一张浮现 */
+html.js .gallery-grid figure:nth-child(2) { transition-delay: .07s; }
+html.js .gallery-grid figure:nth-child(3) { transition-delay: .14s; }
+html.js .gallery-grid figure:nth-child(4) { transition-delay: .21s; }
+html.js .gallery-grid figure:nth-child(5) { transition-delay: .28s; }
+html.js .gallery-grid figure:nth-child(6) { transition-delay: .35s; }
+html.js .gallery-grid figure:nth-child(7) { transition-delay: .42s; }
+html.js .gallery-grid figure:nth-child(8) { transition-delay: .49s; }
+html.js .split > div:nth-child(2) { transition-delay: .15s; }
+html.js .cards .card:nth-child(2) { transition-delay: .12s; }
+html.js .cards .card:nth-child(3) { transition-delay: .24s; }
+html.js .video-box:nth-child(2) { transition-delay: .15s; }
+
+@media (max-width: 820px) {
+  .hero { padding: 96px 20px 90px; min-height: auto; }
+  .hero-btn { display: none; }          /* 手机用左右滑动切换 */
+  .hero-dots { bottom: 14px; }
+}
+
+/* 系统开启"减弱动态效果"时关闭动画，尊重用户设置 */
+@media (prefers-reduced-motion: reduce) {
+  html.js .reveal { opacity: 1; transform: none; transition: none; }
+  .slide, .slide.is-active { animation: none; transition: none; }
+  .hero .slide-img, .hero .slide.is-active .slide-img { animation: none; transform: none; }
+}
+
+/* ============================================================
+   以下为「团队风采」与「科普资源库」两个模块的样式
+   ============================================================ */
+
+/* ---------- 头像组件：有照片显示照片，没照片显示文字头像 ---------- */
+.avatar {
+  position: relative; width: 78px; height: 78px; margin: 0 auto 14px;
+  border-radius: 50%; overflow: hidden;
+  background: linear-gradient(135deg, var(--blue-soft), #DFE9F4);
+  color: var(--blue-deep);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--serif); font-size: 1.7rem; font-weight: 700;
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, .75), 0 3px 10px rgba(7, 65, 129, .16);
+}
+.avatar.red { background: linear-gradient(135deg, #FBECEA, #F3D9D8); color: var(--red-deep);
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, .75), 0 3px 10px rgba(201, 31, 27, .16); }
+.avatar img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+/* ---------- 导师阵容墙 ---------- */
+.mentor-card { text-align: center; }
+.mentor-card h3 { margin: 2px 0 2px; font-size: 1.1rem; }
+.mentor-role { color: var(--muted); font-size: .88rem; }
+.airline-badge {
+  display: inline-block; margin: 10px 0 6px; padding: 3px 13px; border-radius: 999px;
+  background: var(--blue); color: #FFF; font-size: .78rem; letter-spacing: .08em;
+}
+.airline-badge.red { background: var(--red); }
+.tag-list { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin-top: 10px; }
+.tag {
+  font-size: .78rem; color: var(--blue-deep); background: var(--blue-soft);
+  border: 1px solid rgba(7, 65, 129, .25); padding: 3px 10px; border-radius: 999px;
+}
+.tag.red { color: var(--red-deep); background: #FBECEA; border-color: rgba(201, 31, 27, .22); }
+
+/* ---------- 志愿风采墙 ---------- */
+.feel-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(265px, 1fr)); gap: 20px; }
+.feel-card {
+  background: var(--paper); border: 1px solid var(--line); border-radius: 12px;
+  padding: 24px 22px; box-shadow: var(--shadow); text-align: center;
+}
+.feel-card blockquote {
+  font-family: var(--serif); font-size: 1rem; line-height: 1.95; color: var(--ink);
+  margin: 0 0 14px; text-align: left;
+}
+.feel-card .who { color: var(--muted); font-size: .88rem; }
+
+/* ---------- 科普资源库：技能区块 ---------- */
+.skill { margin-bottom: 62px; }
+.skill-head { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-bottom: 6px; }
+.skill-num {
+  width: 40px; height: 40px; flex: none; border-radius: 10px;
+  background: linear-gradient(135deg, var(--red), var(--red-deep)); color: #FFF;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-family: var(--serif); font-weight: 700;
+}
+.skill-num.blue { background: linear-gradient(135deg, var(--blue), var(--blue-deep)); }
+.skill-title { font-size: 1.4rem; color: var(--ink); }
+.skill-en { color: var(--muted); font-size: .84rem; letter-spacing: .12em; }
+.skill-tag {
+  margin-left: auto; font-size: .78rem; padding: 4px 13px; border-radius: 999px;
+  background: var(--blue-soft); color: var(--blue-deep); border: 1px solid rgba(7, 65, 129, .25);
+}
+.skill-tag.red { background: #FBECEA; color: var(--red-deep); border-color: rgba(201, 31, 27, .22); }
+.skill-desc { color: var(--muted); margin: 0 0 8px 54px; }
+
+/* 小标题：左侧渐变竖条 */
+.sub-head {
+  display: flex; align-items: center; gap: 10px; margin: 28px 0 14px;
+  font-family: var(--serif); font-size: 1.05rem; color: var(--red-deep);
+}
+.sub-head::before {
+  content: ""; width: 4px; height: 18px; border-radius: 2px;
+  background: linear-gradient(180deg, var(--red), var(--navy));
+}
+.sub-head.blue { color: var(--blue-deep); }
+
+/* 分步图解：步骤卡片 */
+.step-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
+.step {
+  background: var(--paper); border: 1px solid var(--line); border-left: 4px solid var(--blue);
+  border-radius: 10px; padding: 16px 18px; box-shadow: var(--shadow);
+}
+.step-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 26px; height: 26px; border-radius: 50%; background: var(--blue); color: #FFF;
+  font-size: .84rem; font-weight: 700; margin-bottom: 8px;
+}
+.step h4 { font-size: 1rem; color: var(--red-deep); margin-bottom: 4px; }
+.step p { color: var(--muted); font-size: .92rem; }
+
+/* 醒目警示条（如"晕倒不要盲目扶起"） */
+.callout-warning {
+  display: flex; gap: 12px; align-items: flex-start;
+  background: #FBECEA; border: 1px solid rgba(201, 31, 27, .28);
+  border-left: 5px solid var(--red); border-radius: 8px;
+  padding: 14px 18px; margin: 20px 0;
+}
+.callout-warning .cw-icon { font-size: 1.15rem; line-height: 1.5; flex: none; }
+.callout-warning b { color: var(--red-deep); }
+
+/* 常见误区 */
+.mistake-list {
+  list-style: none; display: grid; gap: 8px 20px;
+  grid-template-columns: repeat(auto-fill, minmax(268px, 1fr));
+}
+.mistake-list li { position: relative; padding-left: 26px; font-size: .94rem; }
+.mistake-list li::before { content: "✕"; position: absolute; left: 0; top: 0; color: var(--red); font-weight: 700; }
+
+/* 图解海报 / 视频槽位 */
+.poster {
+  border: 1px dashed var(--line); border-radius: 10px; background: #FCF8F1;
+  padding: 18px; text-align: center; color: var(--muted); font-size: .9rem;
+}
+.poster img { border-radius: 8px; margin: 0 auto; max-width: min(560px, 100%); }
+.poster b { color: var(--gold-deep); }
+.muted-note { color: var(--muted); font-size: .88rem; }
+
+/* ---------- 核心优势：对比普通团队的差异化高亮条 ---------- */
+.vs {
+  margin-top: 14px;
+  padding: 10px 14px;
+  border: 1px solid rgba(195, 161, 104, .55);
+  border-left: 4px solid var(--gold);
+  border-radius: 6px;
+  background: linear-gradient(150deg, #FFFCF3 0%, #F9F0DB 100%);
+  font-size: .88rem;
+  line-height: 1.7;
+  color: var(--ink);
+}
+
+/* ---------- 首页：两个新模块的入口卡 ---------- */
+.entry-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 22px; }
+.entry-card {
+  display: block; text-decoration: none; background: var(--paper);
+  border: 1px solid var(--line); border-top: 4px solid var(--red); border-radius: 14px;
+  padding: 28px 26px; box-shadow: var(--shadow);
+  transition: transform .25s, box-shadow .25s;
+}
+.entry-card.blue { border-top-color: var(--blue); }
+.entry-card:hover { transform: translateY(-5px); box-shadow: 0 12px 28px rgba(60, 20, 15, .12); }
+.entry-card .entry-icon { font-size: 1.8rem; }
+.entry-card h3 { color: var(--red-deep); margin: 10px 0 8px; font-size: 1.2rem; }
+.entry-card p { color: var(--muted); font-size: .95rem; }
+.entry-card .entry-more { display: inline-block; margin-top: 14px; color: var(--blue); font-weight: 700; font-size: .92rem; }
+
+/* 两个新页面的错峰浮现 */
+html.js .step:nth-child(2), html.js .feel-card:nth-child(2), html.js .mentor-card:nth-child(2) { transition-delay: .07s; }
+html.js .step:nth-child(3), html.js .feel-card:nth-child(3), html.js .mentor-card:nth-child(3) { transition-delay: .14s; }
+html.js .step:nth-child(4), html.js .feel-card:nth-child(4), html.js .mentor-card:nth-child(4) { transition-delay: .21s; }
+html.js .step:nth-child(5), html.js .feel-card:nth-child(5), html.js .mentor-card:nth-child(5) { transition-delay: .28s; }
+html.js .step:nth-child(6), html.js .feel-card:nth-child(6), html.js .mentor-card:nth-child(6) { transition-delay: .35s; }
+html.js .entry-card:nth-child(2) { transition-delay: .12s; }
+
+/* ============================================================
+   以下为「项目概况」页与申报书对齐后新增的组件
+   ============================================================ */
+
+/* ---------- 数据指标条 ---------- */
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(158px, 1fr)); gap: 18px; }
+.stat {
+  background: var(--paper); border: 1px solid var(--line); border-radius: 12px;
+  padding: 22px 18px; text-align: center; box-shadow: var(--shadow);
+}
+.stat .num { font-family: var(--serif); font-size: clamp(1.85rem, 3.4vw, 2.45rem); color: var(--red); line-height: 1.1; }
+.stat.blue .num { color: var(--blue); }
+.stat .num small { font-size: .48em; margin-left: 3px; }
+.stat .label { color: var(--muted); font-size: .9rem; margin-top: 8px; }
+.stat .src { color: #9A9284; font-size: .76rem; margin-top: 6px; }
+
+/* ---------- 红色故事导入卡（科普资源库的"红魂"线） ---------- */
+.red-story {
+  background: linear-gradient(150deg, #FFF9F7 0%, #FBECEA 100%);
+  border: 1px solid rgba(201, 31, 27, .25); border-left: 5px solid var(--red);
+  border-radius: 10px; padding: 18px 22px; margin: 4px 0 4px;
+}
+.red-story .rs-tag {
+  display: inline-block; font-size: .76rem; color: #FFF; background: var(--red);
+  padding: 2px 11px; border-radius: 999px; letter-spacing: .08em;
+}
+.red-story h4 { color: var(--red-deep); margin: 10px 0 6px; font-size: 1.05rem; }
+.red-story p { color: var(--ink); font-size: .95rem; }
+.red-story ol { margin: 8px 0 0 20px; color: var(--muted); font-size: .93rem; line-height: 1.85; }
+.red-story .bridge { margin-top: 10px; color: var(--blue-deep); font-size: .93rem; font-weight: 600; }
+
+/* ---------- 组织架构卡（团队风采） ---------- */
+.org-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(196px, 1fr)); gap: 16px; }
+.org-item {
+  background: var(--paper); border: 1px solid var(--line); border-top: 3px solid var(--blue);
+  border-radius: 10px; padding: 18px 16px; box-shadow: var(--shadow);
+}
+.org-item h4 { color: var(--blue-deep); font-size: 1rem; margin-bottom: 6px; }
+.org-item p { color: var(--muted); font-size: .9rem; }
+.org-item.red { border-top-color: var(--red); }
+.org-item.red h4 { color: var(--red-deep); }
+
+/* ---------- 导航压缩（导航已扩展到 6 项） ---------- */
+@media (max-width: 1040px) {
+  .main-nav a { padding: 8px 10px; font-size: .95rem; }
+  .brand-name { font-size: .95rem; }
+}
