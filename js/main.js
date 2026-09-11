@@ -342,6 +342,12 @@
    · 滚动时用「金边五角红星」沿轨道弹簧滑动到当前模块并高亮；
    · 只在宽屏（≥1400px）显示，窄屏/移动端隐藏，避免挤压正文。
    · 扩展新页面：在下面 RAIL 里补上对应页面名与模块清单即可（顺序即页面从上到下的顺序）。
+   · 页面识别不依赖 URL 结尾是否为 .html：
+       Netlify「Pretty URLs」、Vercel cleanUrls、各种 Nginx 重写都会把 /about.html
+       变成地址栏里的 /about（或 /about/），早期版本用 pathname.split('/').pop()
+       去查 RAIL 就会查不到，导致只有首页（地址是 / ，兜底成 index.html）有这条导航。
+       现在先按 URL 猜页面名，猜不中再按「页面里真实存在的模块 id」兜底，
+       所以任何 URL 形式、任何主机重写下六个页面都能正常显示。
    ============================================================ */
 (function () {
   'use strict';
@@ -384,15 +390,42 @@
     ]
   };
 
-  var page = location.pathname.split('/').pop() || 'index.html';
-  var defs = RAIL[page];
-  if (!defs || defs.length < 2) return;
+  /* ---- 把页面里真实存在的模块筛出来（同时把元素缓存到 d.el） ---- */
+  function present(defs) {
+    return defs.filter(function (d) {
+      var el = document.getElementById(d.id);
+      if (el) { d.el = el; return true; }
+      return false;
+    });
+  }
 
-  var entries = defs.filter(function (d) {
-    var el = document.getElementById(d.id);
-    if (el) { d.el = el; return true; }
-    return false;
-  });
+  /* ---- 按 URL 猜页面名：兼容 /about.html、/about、/about/、/ 等写法 ---- */
+  function pageFromUrl() {
+    var path = location.pathname;
+    if (/\/$/.test(path)) {
+      /* 以 / 结尾：目录形式。本站是扁平文件，仅站点根目录视为首页 */
+      var dirs = path.split('/').filter(Boolean);
+      if (dirs.length <= 1) return 'index.html';
+      return dirs[dirs.length - 1].toLowerCase() + '.html';
+    }
+    var seg = path.split('/').pop().toLowerCase();
+    if (!seg) return 'index.html';
+    if (/\.html?$/.test(seg)) return seg;
+    return seg === 'index' ? 'index.html' : seg + '.html';
+  }
+
+  /* ---- 解析本页该用哪份模块清单 ----
+     先按 URL；URL 猜不中（无扩展名 / 目录形式 / 被主机重写）时，
+     按「本页实际存在几个 RAIL 里的模块 id」兜底，避免整条导航消失。 */
+  var entries = [];
+  var byUrl = RAIL[pageFromUrl()];
+  if (byUrl) entries = present(byUrl);
+  if (entries.length < 2) {
+    Object.keys(RAIL).forEach(function (k) {
+      var hits = present(RAIL[k]);
+      if (hits.length > entries.length) entries = hits;
+    });
+  }
   if (entries.length < 2) return;
 
   /* ---- 构建导航 DOM ---- */
